@@ -110,11 +110,8 @@ function initCustomCursor() {
     });
     
     function updateCursor() {
-        // Smooth dot movement
         dotX += (mouseX - dotX) * 0.1;
         dotY += (mouseY - dotY) * 0.1;
-        
-        // Smooth ring movement
         ringX += (mouseX - ringX) * 0.05;
         ringY += (mouseY - ringY) * 0.05;
         
@@ -125,28 +122,12 @@ function initCustomCursor() {
     }
     
     updateCursor();
-    
-    // Cursor interactions
-    const interactiveElements = document.querySelectorAll('.cta-button, .floating-card, .logo-mark');
-    
-    interactiveElements.forEach(element => {
-        element.addEventListener('mouseenter', () => {
-            cursorRing.style.transform += ' scale(1.5)';
-            cursorRing.style.borderColor = 'rgba(0, 209, 178, 0.8)';
-        });
-        
-        element.addEventListener('mouseleave', () => {
-            cursorRing.style.transform = cursorRing.style.transform.replace(' scale(1.5)', '');
-            cursorRing.style.borderColor = 'rgba(0, 209, 178, 0.5)';
-        });
-    });
 }
 
 // GSAP Animations
 function initHeroAnimations() {
     const tl = gsap.timeline();
     
-    // Main content entrance
     tl.to('.hero-content', {
         opacity: 1,
         y: 0,
@@ -184,10 +165,8 @@ function initHeroAnimations() {
         ease: 'power3.out'
     }, '-=0.2');
     
-    // Animate stats numbers
     animateStats();
     
-    // Floating cards animation
     gsap.to('.floating-card', {
         y: -20,
         duration: 2,
@@ -218,22 +197,6 @@ function animateStats() {
     });
 }
 
-// Particle system enhancement
-function initParticleSystem() {
-    const particleLayers = document.querySelectorAll('.particle-layer');
-    
-    particleLayers.forEach((layer, index) => {
-        const speed = parseFloat(layer.getAttribute('data-speed'));
-        
-        gsap.to(layer, {
-            y: -100,
-            duration: 20 / speed,
-            ease: 'none',
-            repeat: -1
-        });
-    });
-}
-
 // Interactive button effects
 function initButtonEffects() {
     const buttons = document.querySelectorAll('.cta-button');
@@ -245,9 +208,6 @@ function initButtonEffects() {
                 duration: 0.3,
                 ease: 'power2.out'
             });
-            
-            // Create particle burst effect
-            createButtonParticles(button);
         });
         
         button.addEventListener('mouseleave', () => {
@@ -261,7 +221,6 @@ function initButtonEffects() {
         button.addEventListener('click', (e) => {
             e.preventDefault();
             
-            // Click animation
             gsap.to(button, {
                 scale: 0.95,
                 duration: 0.1,
@@ -269,48 +228,9 @@ function initButtonEffects() {
                 repeat: 1
             });
             
-            // Show success message
             showSuccessMessage();
         });
     });
-}
-
-// Create button particle effects
-function createButtonParticles(button) {
-    const particleContainer = button.querySelector('.button-particles');
-    if (!particleContainer) return;
-    
-    for (let i = 0; i < 8; i++) {
-        const particle = document.createElement('div');
-        particle.style.cssText = `
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #00D1B2;
-            border-radius: 50%;
-            pointer-events: none;
-        `;
-        
-        particleContainer.appendChild(particle);
-        
-        gsap.fromTo(particle, 
-            {
-                x: 0,
-                y: 0,
-                opacity: 1,
-                scale: 0
-            },
-            {
-                x: (Math.random() - 0.5) * 100,
-                y: (Math.random() - 0.5) * 100,
-                opacity: 0,
-                scale: 1,
-                duration: 1,
-                ease: 'power2.out',
-                onComplete: () => particle.remove()
-            }
-        );
-    }
 }
 
 // Success message
@@ -349,21 +269,6 @@ function showSuccessMessage() {
     }, 3000);
 }
 
-// Parallax effect for floating elements
-function initParallax() {
-    const floatingElements = document.querySelectorAll('.floating-card');
-    
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        
-        floatingElements.forEach(element => {
-            const speed = parseFloat(element.getAttribute('data-speed'));
-            const yPos = -(scrolled * speed);
-            element.style.transform = `translateY(${yPos}px)`;
-        });
-    });
-}
-
 // Mouse tracking for WebGL
 function initMouseTracking() {
     document.addEventListener('mousemove', (event) => {
@@ -384,92 +289,26 @@ function handleResize() {
     }
 }
 
-// Performance monitoring
-function initPerformanceMonitoring() {
-    let lastTime = performance.now();
-    let frameCount = 0;
-    
-    function checkPerformance() {
-        frameCount++;
-        const currentTime = performance.now();
-        
-        if (currentTime - lastTime >= 1000) {
-            const fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
-            
-            if (fps < 30) {
-                console.warn(`Low FPS detected: ${fps}`);
-                // Reduce particle count or effects
-            }
-            
-            frameCount = 0;
-            lastTime = currentTime;
-        }
-        
-        requestAnimationFrame(checkPerformance);
-    }
-    
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        requestAnimationFrame(checkPerformance);
-    }
-}
-
-// Touch device detection and optimization
+// Touch device optimization
 function initTouchOptimizations() {
     if ('ontouchstart' in window) {
         document.body.classList.add('touch-device');
-        
-        // Disable custom cursor on touch devices
         const cursor = document.querySelector('.custom-cursor');
         if (cursor) cursor.style.display = 'none';
-        
-        // Restore default cursor
         document.body.style.cursor = 'auto';
-        
-        // Optimize animations for touch
-        gsap.set('.floating-card', {
-            animation: 'none'
-        });
     }
 }
 
 // Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
-    // Start with loading screen
     initLoadingScreen();
-    
-    // Initialize WebGL
     initWebGL();
-    
-    // Initialize custom cursor
     initCustomCursor();
-    
-    // Initialize particle system
-    initParticleSystem();
-    
-    // Initialize button effects
     initButtonEffects();
-    
-    // Initialize parallax
-    initParallax();
-    
-    // Initialize mouse tracking
     initMouseTracking();
-    
-    // Initialize performance monitoring
-    initPerformanceMonitoring();
-    
-    // Initialize touch optimizations
     initTouchOptimizations();
     
-    // Handle window resize
     window.addEventListener('resize', handleResize);
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            // Close any modals or overlays
-        }
-    });
 });
 
 // Export for external use
@@ -477,6 +316,5 @@ window.StraviusTech = {
     initWebGL,
     initCustomCursor,
     initHeroAnimations,
-    animateStats,
-    createButtonParticles
+    animateStats
 }; 
