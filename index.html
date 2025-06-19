@@ -3,140 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stravius Tech | Next-Gen AI Solutions</title>
+    <title>Stravius Tech | Tech Consultancy</title>
     <meta name="description" content="Stravius Tech delivers cutting-edge AI solutions and strategic technology consulting for forward-thinking businesses.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 </head>
 <body>
-    <div class="loading-screen">
-        <div class="loading-content">
-            <div class="loading-logo">
-                <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                    <path d="M30 5L55 30L30 55L5 30L30 5Z" stroke="url(#loadingGradient)" stroke-width="3" fill="none"/>
-                    <circle cx="30" cy="30" r="12" fill="url(#loadingGradient)"/>
-                    <defs>
-                        <linearGradient id="loadingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#00D1B2"/>
-                            <stop offset="100%" style="stop-color:#FFA654"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-            </div>
-            <div class="loading-text">STRAVIUS TECH</div>
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
-            </div>
-        </div>
-    </div>
-
     <header class="hero">
-        <!-- WebGL Canvas -->
-        <canvas id="webgl-canvas" class="webgl-canvas"></canvas>
-        
-        <!-- Particle System -->
-        <div class="particle-system">
-            <div class="particle-layer" data-speed="0.5"></div>
-            <div class="particle-layer" data-speed="0.8"></div>
-            <div class="particle-layer" data-speed="1.2"></div>
-        </div>
-        
-        <!-- Floating Elements -->
-        <div class="floating-elements">
-            <div class="floating-card" data-speed="0.3">
-                <div class="card-content">
-                    <div class="card-icon">🤖</div>
-                    <div class="card-text">AI Strategy</div>
-                </div>
-            </div>
-            <div class="floating-card" data-speed="0.5">
-                <div class="card-content">
-                    <div class="card-icon">⚡</div>
-                    <div class="card-text">Fast Deployment</div>
-                </div>
-            </div>
-            <div class="floating-card" data-speed="0.7">
-                <div class="card-content">
-                    <div class="card-icon">📈</div>
-                    <div class="card-text">Scale & Optimize</div>
-                </div>
-            </div>
+        <!-- Background Graphics -->
+        <div class="hero-background">
+            <div class="neural-network"></div>
+            <div class="data-grid"></div>
+            <div class="particles"></div>
         </div>
         
         <!-- Main Content -->
         <div class="hero-content">
             <div class="logo-container">
                 <div class="logo-mark">
-                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M24 4L44 24L24 44L4 24L24 4Z" stroke="url(#gradient)" stroke-width="2" fill="none"/>
+                        <circle cx="24" cy="24" r="8" fill="url(#gradient)"/>
                         <defs>
-                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#00D1B2"/>
-                                <stop offset="50%" style="stop-color:#FFA654"/>
-                                <stop offset="100%" style="stop-color:#00D1B2"/>
+                                <stop offset="100%" style="stop-color:#FFA654"/>
                             </linearGradient>
-                            <filter id="glow">
-                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                                <feMerge> 
-                                    <feMergeNode in="coloredBlur"/>
-                                    <feMergeNode in="SourceGraphic"/>
-                                </feMerge>
-                            </filter>
                         </defs>
-                        <path d="M32 8L56 32L32 56L8 32L32 8Z" stroke="url(#logoGradient)" stroke-width="3" fill="none" filter="url(#glow)"/>
-                        <circle cx="32" cy="32" r="16" fill="url(#logoGradient)" filter="url(#glow)"/>
-                        <circle cx="32" cy="32" r="8" fill="#0E0E1A"/>
                     </svg>
                 </div>
             </div>
             
-            <h1 class="brand-name">
-                <span class="brand-text">STRAVIUS</span>
-                <span class="brand-accent">TECH</span>
-            </h1>
-            
-            <p class="tagline">Revolutionizing AI Deployment with Next-Generation Solutions</p>
+            <h1 class="brand-name">STRAVIUS TECH</h1>
+            <p class="tagline">End-to-end AI Deployment from Strategy to Scale</p>
             
             <div class="cta-container">
-                <button class="cta-button primary">
-                    <span class="button-text">Start Your AI Journey</span>
+                <button class="cta-button">
+                    <span>Book a Strategy Call</span>
                     <div class="button-glow"></div>
-                    <div class="button-particles"></div>
                 </button>
-                <button class="cta-button secondary">
-                    <span class="button-text">View Case Studies</span>
-                </button>
-            </div>
-            
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="500">0</div>
-                    <div class="stat-label">AI Models Deployed</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="98">0</div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="24">0</div>
-                    <div class="stat-label">Hours to MVP</div>
-                </div>
             </div>
         </div>
         
         <!-- Scroll Indicator -->
         <div class="scroll-indicator">
             <div class="scroll-line"></div>
-            <div class="scroll-text">Explore</div>
-        </div>
-        
-        <!-- Interactive Cursor -->
-        <div class="custom-cursor">
-            <div class="cursor-dot"></div>
-            <div class="cursor-ring"></div>
         </div>
     </header>
 
