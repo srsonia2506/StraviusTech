@@ -10,7 +10,6 @@ body {
     line-height: 1.6;
     color: #ffffff;
     background: #0E0E1A;
-    overflow-x: hidden;
 }
 
 /* Hero Section */
@@ -369,12 +368,21 @@ body {
     background-color: transparent;
     color: #a0a0a0;
     padding: 6rem 0;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 1rem;
+}
+
+.why-stravius .container {
+    max-width: 1100px;
+}
+
+.what-we-do .container {
+    max-width: 1140px;
 }
 
 .section-title {
@@ -409,22 +417,32 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 0.5rem;
+    padding: 2rem 0;
 }
 
 .feature-item {
     background: transparent;
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 1rem;
+    border: none;
+    box-shadow: none;
 }
 
 .feature-item:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(0, 209, 178, 0.5);
+    transform: none;
+    background: transparent;
+    border-color: transparent;
+}
+
+.feature-icon {
+    margin-bottom: 1.5rem;
+    color: #00D1B2;
+}
+
+.feature-icon svg {
+    width: 48px;
+    height: 48px;
+    stroke-width: 1;
 }
 
 .feature-item h3 {
@@ -437,47 +455,37 @@ body {
 .feature-item p {
     color: #a0a0a0;
     line-height: 1.5;
+    max-width: 220px;
+    margin: 0 auto;
 }
 
 .why-stravius-details {
-    max-width: 750px;
-    margin: 0 auto 4rem auto;
-    padding: 2.5rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: left;
-    background: rgba(255, 255, 255, 0.02);
+    max-width: 950px;
+    margin: 0 auto 1rem auto;
+    padding: 0;
+    border: none;
+    text-align: center;
+    background: transparent;
 }
 
 .why-stravius-details p {
     color: #a0a0a0;
     font-size: 1.1rem;
     line-height: 1.7;
-}
-
-.why-stravius-details p:not(:last-child) {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .summary-box {
-    max-width: 750px;
     margin: 0 auto 3rem auto;
-    padding: 2.5rem;
-    border-radius: 12px;
-    background: rgba(0, 209, 178, 0.05);
-    border: 1px solid rgba(0, 209, 178, 0.2);
-}
-
-.summary-box h3 {
-    font-size: 1.5rem;
-    color: #fff;
-    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-radius: 0;
+    background: transparent;
+    border: none;
 }
 
 .summary-box p {
     color: #a0a0a0;
     font-size: 1.1rem;
-    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -486,13 +494,13 @@ body {
 }
 
 .why-stravius .cta-button {
-    background-color: #00D1B2;
-    color: #0E0E1A;
-    border: none;
+    background: transparent;
+    border: 1px solid #00D1B2;
+    color: #00D1B2;
 }
 
 .why-stravius .cta-button:hover {
-    background-color: #FFA654;
+    background: #00D1B2;
     color: #0E0E1A;
 }
 
@@ -613,35 +621,90 @@ body {
 }
 
 /* What We Do Section */
-.services-grid {
+.what-we-do .services-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
-.service-category h3 {
-    font-size: 1.75rem;
+.what-we-do .service-category {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.what-we-do .service-category:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 209, 178, 0.3);
+}
+
+.service-icon {
+    margin-bottom: 1.5rem;
+    color: #00D1B2;
+}
+
+.service-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.what-we-do .service-category h3 {
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: #ffffff;
 }
 
-.service-category ul {
+.what-we-do .service-category ul {
     list-style: none;
     padding: 0;
 }
 
-.service-category ul li {
+.what-we-do .service-category ul li {
     margin-bottom: 1rem;
     display: flex;
-    align-items: center;
-    font-size: 1.1rem;
+    align-items: flex-start;
+    font-size: 1rem;
+    color: #a0a0a0;
+    line-height: 1.5;
 }
 
-.service-category .icon {
-    margin-right: 1rem;
-    font-size: 1.2rem;
+.what-we-do .service-category ul li::before {
+    content: '→';
+    margin-right: 0.75rem;
     color: #00D1B2;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.what-we-do-cta {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1.2rem;
+    color: #a0a0a0;
+}
+
+.what-we-do-cta a {
+    color: #00D1B2;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.what-we-do-cta a:hover {
+    color: #FFA654;
+    border-bottom-color: #FFA654;
+}
+
+@media (max-width: 900px) {
+    .what-we-do .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Contact Section */
