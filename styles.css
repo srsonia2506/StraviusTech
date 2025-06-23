@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
@@ -203,6 +207,9 @@ body {
     overflow: hidden;
     border-radius: 4px;
     letter-spacing: 0.05em;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
 }
 
 .cta-button:hover {
@@ -389,7 +396,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     color: #ffffff;
     letter-spacing: 0.05em;
     position: relative;
@@ -417,8 +424,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     text-align: center;
-    margin-bottom: 0.5rem;
-    padding: 2rem 0;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
 }
 
 .feature-item {
@@ -437,6 +444,12 @@ body {
 .feature-icon {
     margin-bottom: 1.5rem;
     color: #00D1B2;
+}
+
+.feature-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
 
 .feature-icon svg {
@@ -463,7 +476,6 @@ body {
     max-width: 950px;
     margin: 0 auto 1rem auto;
     padding: 0;
-    border: none;
     text-align: center;
     background: transparent;
 }
@@ -476,8 +488,8 @@ body {
 }
 
 .summary-box {
-    margin: 0 auto 3rem auto;
-    padding: 1rem;
+    margin: 0 auto 1.5rem auto;
+    padding: 0.5rem;
     border-radius: 0;
     background: transparent;
     border: none;
@@ -511,7 +523,7 @@ body {
     background: transparent;
     width: 100%;
     max-width: 960px;
-    margin: 6rem auto;
+    margin: 4rem auto;
 }
 
 /* Founder Section */
@@ -621,13 +633,16 @@ body {
 }
 
 /* What We Do Section */
+.what-we-do .container {
+    max-width: 1140px;
+}
 .what-we-do .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-.what-we-do .service-category {
+.service-category {
     background: rgba(255, 255, 255, 0.03);
     padding: 2.5rem 2rem;
     border-radius: 12px;
@@ -636,7 +651,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.what-we-do .service-category:hover {
+.service-category:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(0, 209, 178, 0.3);
@@ -652,19 +667,19 @@ body {
     height: 40px;
 }
 
-.what-we-do .service-category h3 {
+.service-category h3 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: #ffffff;
 }
 
-.what-we-do .service-category ul {
+.service-category ul {
     list-style: none;
     padding: 0;
 }
 
-.what-we-do .service-category ul li {
+.service-category ul li {
     margin-bottom: 1rem;
     display: flex;
     align-items: flex-start;
@@ -673,7 +688,7 @@ body {
     line-height: 1.5;
 }
 
-.what-we-do .service-category ul li::before {
+.service-category ul li::before {
     content: '→';
     margin-right: 0.75rem;
     color: #00D1B2;
@@ -683,9 +698,14 @@ body {
 
 .what-we-do-cta {
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
     font-size: 1.2rem;
     color: #a0a0a0;
+    padding-bottom: 1rem;
+}
+
+.what-we-do-cta p {
+    margin-bottom: 1.5rem;
 }
 
 .what-we-do-cta a {
