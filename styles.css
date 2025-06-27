@@ -411,7 +411,7 @@ body {
     transform: translateX(-50%);
     width: 60px;
     height: 2px;
-    background: linear-gradient(90deg, #00D1B2, #FFA654);
+    background: linear-gradient(90deg, #00d1b2, #FFA654);
 }
 
 /* Why Stravius Section */
@@ -810,5 +810,168 @@ body {
 
     .contact-text {
         text-align: center;
+    }
+}
+
+/* Glassmorphic Navigation Bar */
+.glass-nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* background: rgba(20, 24, 34, 0.65); */
+    background: black;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1.5px solid rgba(0,209,178,0.08);
+    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.12);
+    transition: background 0.3s;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+}
+
+.nav-logo svg {
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    padding: 0.5rem 0.2rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-bottom 0.2s;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: #00D1B2;
+    border-bottom: 2px solid #00D1B2;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #00D1B2;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+@media (max-width: 900px) {
+    .nav-container {
+        padding: 0.5rem 1rem;
+    }
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 1rem;
+        background: rgba(20, 24, 34, 0.95);
+        box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25);
+        border-radius: 12px;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1.5rem 2rem;
+        min-width: 180px;
+        display: none;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-toggle {
+        display: flex;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-container {
+        padding: 0.5rem 0.5rem;
+    }
+    .nav-logo span {
+        display: none;
+    }
+}
+
+.who-we-are {
+    padding: 4rem 0;
+}
+.who-we-are-content {
+    background: rgba(255,255,255,0.02);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 40px 0 rgba(0,0,0,0.18), 0 0 0 1.5px rgba(0,209,178,0.08);
+    padding: 2.5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #e0e0e0;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+.who-we-are-content ul {
+    margin: 2rem 0 2rem 1.5rem;
+    padding: 0;
+}
+.who-we-are-content li {
+    margin-bottom: 1.1rem;
+    color: #00D1B2;
+    font-weight: 500;
+    font-size: 1.08rem;
+    list-style: disc;
+}
+.who-we-are-content li strong {
+    color: #fff;
+    font-weight: 700;
+}
+.who-we-are-content p {
+    margin-bottom: 1.2rem;
+}
+@media (max-width: 700px) {
+    .who-we-are-content {
+        padding: 1.2rem 0.7rem;
+        font-size: 1rem;
+    }
+    .who-we-are-content ul {
+        margin: 1.2rem 0 1.2rem 1.1rem;
     }
 } 

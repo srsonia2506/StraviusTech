@@ -11,7 +11,34 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="hero">
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
+                    <path d="M24 4L44 24L24 44L4 24L24 4Z" stroke="url(#gradient)" stroke-width="2" fill="none"/>
+                    <circle cx="24" cy="24" r="8" fill="url(#gradient)"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00D1B2"/>
+                            <stop offset="100%" style="stop-color:#FFA654"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span>Stravius Tech</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#founder">Who We Are</a></li>
+                <li><a href="#why-stravius">Why Stravius</a></li>
+                <li><a href="#what-we-do">What We Do</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <header class="hero" id="hero">
         <!-- Background Graphics -->
         <div class="hero-background">
             <div class="neural-network"></div>
@@ -54,7 +81,22 @@
     </header>
 
     <main class="content-wrapper">
-        <section class="why-stravius">
+        <section class="who-we-are" id="founder">
+            <div class="container">
+                <h2 class="section-title">WHO WE ARE</h2>
+                <div class="who-we-are-content">
+                    <p><strong>Stravius Tech</strong> is an end-to-end AI consultancy built for ambitious teams and leaders who want to harness the real power of artificial intelligence. We combine deep technical expertise with business-first thinking to help you go from strategy to scalable, production-ready solutions—without the hype or hand-waving.</p>
+                    <ul>
+                        <li><strong>AI Strategy & Readiness:</strong> We assess, roadmap, and align AI with your business goals.</li>
+                        <li><strong>Automation & Intelligence:</strong> We design and deploy automation, LLMs, and custom AI to drive efficiency and insight.</li>
+                        <li><strong>Engineering & Implementation:</strong> We build, integrate, and maintain robust systems that scale with you.</li>
+                    </ul>
+                    <p>Whether you're exploring AI for the first time or scaling mission-critical systems, Stravius Tech is your partner for every step of the journey.</p>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+        <section class="why-stravius" id="why-stravius">
             <div class="container">
                 <h2 class="section-title">WHY STRAVIUS</h2>
                 
@@ -96,29 +138,8 @@
                 </div>
             </div>
         </section>
-
         <div class="section-divider"></div>
-
-        <section class="founder">
-            <div class="container">
-                <div class="founder-bg">
-                    <div class="founder-image-wrapper">
-                        <img src="img/sonia.png" alt="Sonia S., Founder of Stravius Tech" class="founder-image">
-                    </div>
-                    <div class="founder-bio">
-                        <h3>Sonia S.</h3>
-                        <p class="founder-title">Founder, Stravius Tech</p>
-                        <blockquote>
-                            "I'm Sonia, founder of Stravius Tech—a full-stack AI engineer and product builder. I've shipped RAG-powered mobile apps, built scalable backend systems, and co-founded AI tools used in real development workflows. I work with teams to turn MVPs into production-grade systems—handling everything from strategy and architecture to deployment and long-term maintenance."
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <section class="what-we-do">
+        <section class="what-we-do" id="what-we-do">
             <div class="container">
                 <h2 class="section-title">WHAT WE DO</h2>
                 <div class="services-grid">
@@ -180,9 +201,7 @@
                 </div>
             </div>
         </section>
-
         <div class="section-divider"></div>
-
         <section class="contact" id="contact">
             <div class="container">
                 <div class="contact-grid">
@@ -199,5 +218,18 @@
             </div>
         </section>
     </main>
+    <script>
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+      // Optional: close menu on link click (mobile)
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+        });
+      });
+    </script>
 </body>
 </html> 
