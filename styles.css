@@ -388,19 +388,24 @@ body {
     max-width: 1100px;
 }
 
+.what-we-do {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+}
+
 .what-we-do .container {
     max-width: 1140px;
+    padding-top: 0;
 }
 
 .section-title {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
+    margin-top: 0;
     color: #ffffff;
     letter-spacing: 0.05em;
-    position: relative;
-    padding-bottom: 1rem;
 }
 
 .section-title::after {
@@ -633,9 +638,6 @@ body {
 }
 
 /* What We Do Section */
-.what-we-do .container {
-    max-width: 1140px;
-}
 .what-we-do .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -701,7 +703,7 @@ body {
     margin-top: 2rem;
     font-size: 1.2rem;
     color: #a0a0a0;
-    padding-bottom: 1rem;
+    padding-bottom: 3rem;
 }
 
 .what-we-do-cta p {
@@ -942,11 +944,17 @@ body {
     border-radius: 1.5rem;
     box-shadow: 0 8px 40px 0 rgba(0,0,0,0.18), 0 0 0 1.5px rgba(0,209,178,0.08);
     padding: 2.5rem 2rem;
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
     color: #e0e0e0;
     font-size: 1.15rem;
     line-height: 1.7;
+}
+.who-we-are-content > :first-child {
+    margin-top: 0;
+}
+.who-we-are-content > :last-child {
+    margin-bottom: 0;
 }
 .who-we-are-content ul {
     margin: 2rem 0 2rem 1.5rem;
@@ -974,4 +982,20 @@ body {
     .who-we-are-content ul {
         margin: 1.2rem 0 1.2rem 1.1rem;
     }
+}
+
+.who-we-are-cta {
+    text-align: center;
+    margin-top: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+.who-we-are-cta .cta-question {
+    margin-bottom: 0.3rem;
+    color: #fff;
+    font-size: 1.18rem;
+    font-weight: 500;
+}
+
+.what-we-do-cta .cta-question {
+    margin-bottom: 0.3rem;
 } 
