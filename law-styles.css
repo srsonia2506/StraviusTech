@@ -366,16 +366,18 @@ body {
 }
 
 .law-section-title {
-    font-size: 2.3rem;
-    font-weight: 800;
-    letter-spacing: 0.03em;
+    font-size: 2.8rem;
+    font-weight: 700;
     color: #1A2340;
     text-align: center;
     margin-top: 3.5rem;
-    margin-bottom: 2.2rem;
-    text-transform: uppercase;
-    border-bottom: 2px solid #E0E0E0;
-    padding-bottom: 0.7rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    border-bottom: none;
+    padding-bottom: 0;
+    line-height: 1.2;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 .law-subsection-title {
     font-size: 1.25rem;
@@ -468,60 +470,170 @@ body {
 }
 
 .law-intro-revamp {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto 2.5rem auto;
-    padding: 3.5rem 1rem 2.5rem 1rem;
+    padding: 2.8rem 1rem 2rem 1rem;
     background: none;
 }
-.law-intro-title {
-    font-size: 1.15rem;
+
+/* Typography Hierarchy */
+.law-intro-headline {
+    font-size: 2.8rem;
     font-weight: 700;
     color: #1A2340;
     text-align: center;
-    margin-bottom: 1.2rem;
-    letter-spacing: -0.01em;
-    max-width: 1400px;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.law-intro-subhead {
+    font-size: 1.2rem;
+    color: #3A4666;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: unset;
 }
-.law-intro-body {
-    max-width: 900px;
-    margin: 0 auto;
-    color: #3A4666;
-    font-size: 1.13rem;
-    line-height: 1.7;
-    text-align: left;
+
+/* Scannable Benefits List */
+.law-intro-benefits-list {
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
 }
-.law-intro-body p {
-    margin-bottom: 1.1rem;
-}
-.law-intro-body strong {
+
+.law-intro-benefits-intro {
+    font-size: 1.1rem;
     color: #1A2340;
     font-weight: 600;
+    margin-bottom: 0.8rem;
 }
-.law-intro-benefits {
-    list-style: disc inside;
-    margin: 1.1rem 0 1.1rem 1.2rem;
+
+.law-intro-benefits-bullets {
+    list-style: none;
     padding: 0;
-    color: #1A2340;
-    font-size: 1.08rem;
-    font-weight: 500;
+    margin: 0;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
-.law-intro-benefits li {
+
+.law-intro-benefits-bullets li {
+    color: #3A4666;
+    font-size: 1.05rem;
+    line-height: 1.6;
     margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
 }
+
+.law-intro-benefits-bullets li::before {
+    content: "•";
+    color: #1E4D5C;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Benefits Section */
+.law-intro-benefits-section {
+    margin-bottom: 2.5rem;
+}
+
+.law-intro-benefits-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1A2340;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+/* Redesigned Benefit Cards */
+.law-intro-benefit-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+    margin-bottom: 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.law-intro-benefit-card {
+    background: rgba(30, 77, 92, 0.05);
+    border-radius: 0.8rem;
+    border: 1px solid rgba(30, 77, 92, 0.1);
+    box-shadow: 0 2px 8px 0 rgba(26,35,64,0.06);
+    padding: 1rem 1.2rem;
+    min-width: 180px;
+    max-width: 220px;
+    flex: 1 1 180px;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #1A2340;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.2s ease;
+}
+
+.law-intro-benefit-card:hover {
+    box-shadow: 0 4px 16px 0 rgba(26,35,64,0.1);
+    border-color: rgba(30, 77, 92, 0.2);
+}
+
+.law-intro-benefit-card.primary {
+    background: rgba(30, 77, 92, 0.08);
+    border-color: rgba(30, 77, 92, 0.15);
+    font-weight: 600;
+}
+
+.law-intro-benefit-card.secondary {
+    background: rgba(30, 77, 92, 0.04);
+    border-color: rgba(30, 77, 92, 0.08);
+}
+
+.law-intro-benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+/* Contextual CTA Section */
+.law-intro-cta-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.law-intro-cta-prompt {
+    font-size: 1.1rem;
+    color: #1A2340;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
 .law-intro-cta {
     display: inline-block;
-    margin-top: 1.7rem;
-    font-size: 1.08rem;
+    font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 0.01em;
     border-radius: 8px;
     text-transform: none;
-    padding: 0.95rem 2.2rem;
+    padding: 1rem 2.2rem;
     color: #fff;
     background: #1E4D5C;
     border: 2px solid #1E4D5C;
@@ -529,97 +641,209 @@ body {
     text-decoration: none;
     box-shadow: 0 2px 12px 0 rgba(30,77,92,0.10);
 }
+
 .law-intro-cta:hover, .law-intro-cta:focus {
     background: #2C6B7A;
     color: #fff;
     border-color: #2C6B7A;
     box-shadow: 0 4px 24px 0 rgba(44,107,122,0.18);
 }
-.law-intro-benefits-chips {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem 1.5rem;
-    margin-bottom: 1.2rem;
-}
-.law-intro-benefits-chips .law-benefit {
-    min-width: 220px;
-    max-width: 260px;
-    flex: 1 1 220px;
-    text-align: center;
-}
-.law-intro-benefits-chips .law-benefit:nth-child(1),
-.law-intro-benefits-chips .law-benefit:nth-child(2),
-.law-intro-benefits-chips .law-benefit:nth-child(3) {
-    /* First row */
-}
-.law-intro-benefits-chips .law-benefit:nth-child(4),
-.law-intro-benefits-chips .law-benefit:nth-child(5) {
-    /* Second row */
-}
-@media (max-width: 700px) {
-    .law-intro-title {
-        font-size: 0.98rem;
-        max-width: 100vw;
-        white-space: normal;
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .law-intro-headline {
+        font-size: 2.2rem;
     }
-    .law-intro-benefits-chips {
-        flex-direction: column;
-        gap: 0.7rem;
+    .law-intro-benefit-cards {
+        gap: 0.8rem 1.2rem;
     }
-    .law-intro-benefits-chips .law-benefit {
-        min-width: 0;
-        max-width: 100%;
+    .law-intro-benefit-card {
+        min-width: 160px;
+        max-width: 200px;
+        padding: 0.9rem 1rem;
+        font-size: 0.9rem;
     }
 }
 
-.law-intro-cta-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2.2rem;
-}
-.law-intro-benefit-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem 2.2rem;
-    margin-bottom: 2.2rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.law-intro-benefit-card {
-    background: rgba(30, 77, 92, 0.1); /* light navy tint, 5% opacity */
-    border-radius: 1rem;
-    border: 2px solid #1A2340;
-    box-shadow: 0 6px 32px 0 rgba(26,35,64,0.13);
-    padding: 1.3rem 1.1rem;
-    min-width: 220px;
-    max-width: 260px;
-    flex: 1 1 220px;
-    text-align: center;
-    font-size: 1.08rem;
-    color: #1A2340;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-}
-.law-intro-benefit-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0.2rem;
-    flex-shrink: 0;
-}
 @media (max-width: 700px) {
+    .law-intro-headline {
+        font-size: 1.8rem;
+    }
+    .law-intro-subhead {
+        font-size: 1.1rem;
+    }
     .law-intro-benefit-cards {
         flex-direction: column;
         gap: 0.7rem;
+        align-items: center;
     }
     .law-intro-benefit-card {
         min-width: 0;
         max-width: 100%;
+        width: 100%;
+        max-width: 300px;
+    }
+    .law-intro-benefits-bullets {
+        text-align: center;
+    }
+    .law-intro-benefits-bullets li {
+        padding-left: 0;
+        padding-top: 0.3rem;
+    }
+    .law-intro-benefits-bullets li::before {
+        position: static;
+        margin-right: 0.5rem;
+    }
+}
+
+/* How We Help Your Firm with AI Section */
+.law-section-intro {
+    font-size: 1.2rem;
+    color: #3A4666;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.law-help-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.2rem;
+    margin: 2.2rem 0 2rem 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.law-help-column {
+    display: flex;
+    flex-direction: column;
+    background: rgba(30,77,92,0.035); /* default: subtle navy tint */
+    border-radius: 1.2rem;
+    padding: 2.2rem 1.2rem 1.2rem 1.2rem;
+    box-shadow: 0 2px 12px 0 rgba(30,77,92,0.03);
+}
+.law-help-column:last-child {
+    background: rgba(139,69,19,0.025); /* subtle brown/tan tint */
+}
+
+.law-help-category {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1A2340;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    padding-bottom: 0.2rem;
+    border-bottom: none;
+}
+.law-help-category-intro {
+    font-size: 1.02rem;
+    color: #3A4666;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.law-help-column:first-child .law-help-category {
+    color: #1E4D5C;
+}
+.law-help-column:last-child .law-help-category {
+    color: #8B4513;
+}
+
+.law-help-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.law-help-card {
+    background: #fff;
+    border-radius: 0.8rem;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+    padding: 1.5rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.2s ease;
+}
+
+.law-help-card:hover {
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
+    border-color: rgba(30,77,92,0.15);
+}
+
+.law-help-column:first-child .law-help-card:hover {
+    border-color: rgba(30,77,92,0.2);
+}
+.law-help-column:last-child .law-help-card:hover {
+    border-color: rgba(139,69,19,0.2);
+}
+
+.law-help-icon {
+    margin-bottom: 1rem;
+    color: #1E4D5C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(30,77,92,0.08);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+.law-help-column:last-child .law-help-icon {
+    color: #8B4513;
+    background: rgba(139,69,19,0.08);
+}
+
+.law-help-card h3 {
+    font-size: 1.1rem;
+    color: #1A2340;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.law-help-card p {
+    font-size: 1rem;
+    color: #3A4666;
+    text-align: left;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .law-help-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        margin: 1.2rem 0 1rem 0;
+    }
+    .law-help-category {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    .law-help-cards {
+        gap: 1rem;
+    }
+    .law-help-column {
+        padding: 1.2rem 0.7rem 0.7rem 0.7rem;
+    }
+    .law-help-card {
+        padding: 1.1rem;
+    }
+    .law-help-card h3 {
+        font-size: 1.05rem;
+    }
+    .law-help-card p {
+        font-size: 0.95rem;
     }
 }
