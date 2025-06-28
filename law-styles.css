@@ -1,0 +1,625 @@
+body { 
+    background: #F8F7F4; 
+    color: #1A2340; 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.law-nav {
+    position: sticky; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+    background: rgba(255,255,255,0.85); 
+    backdrop-filter: blur(14px) saturate(180%);
+    border-bottom: 1.5px solid #E0E0E0; 
+    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.06);
+}
+
+.law-nav-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0.5rem 2rem; 
+}
+
+.law-nav-logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.7rem; 
+    font-weight: 700; 
+    font-size: 1.2rem; 
+    color: #1A2340; 
+    text-decoration: none; 
+    letter-spacing: -0.02em; 
+}
+
+.law-nav-logo svg { 
+    display: block; 
+}
+
+.law-nav-links { 
+    display: flex; 
+    gap: 2rem; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.law-nav-links a { 
+    color: #1A2340; 
+    text-decoration: none; 
+    font-weight: 500; 
+    font-size: 1.05rem; 
+    letter-spacing: -0.01em; 
+    padding: 0.5rem 0.2rem; 
+    border-bottom: 2px solid transparent; 
+    transition: color 0.2s, border-bottom 0.2s; 
+    position: relative; 
+}
+
+.law-nav-links a:hover, .law-nav-links a:focus { 
+    color: #1E4D5C; 
+    border-bottom: 2px solid #1E4D5C; 
+}
+
+.law-hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    background: none;
+    overflow: hidden;
+}
+.law-hero-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, rgba(30,77,92,0.62) 55%, rgba(30,77,92,0.18) 100%), url('img/bg.png') center center/cover no-repeat;
+    z-index: 1;
+    backdrop-filter: blur(4px);
+}
+.law-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+    margin-left: 7vw;
+    color: #fff;
+    text-align: left;
+    padding: 4.5rem 0 4.5rem 0;
+}
+.law-hero-content h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.18;
+    margin-bottom: 1.3rem;
+    color: #fff;
+    text-transform: none;
+    text-shadow: 0 2px 8px rgba(30,77,92,0.10);
+}
+.law-hero-content p {
+    font-size: 1.18rem;
+    color: #dbe7ee;
+    line-height: 1.6;
+    margin-bottom: 2.1rem;
+    font-weight: 400;
+}
+.law-hero-cta {
+    display: inline-block;
+    font-size: 1.08rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border-radius: 8px;
+    text-transform: none;
+    padding: 0.95rem 2.2rem;
+    color: #fff;
+    background: #1E4D5C;
+    border: 2px solid #1E4D5C;
+    transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s;
+    text-decoration: none;
+    box-shadow: 0 2px 12px 0 rgba(30,77,92,0.10);
+}
+.law-hero-cta:hover, .law-hero-cta:focus {
+    background: #2C6B7A;
+    color: #fff;
+    border-color: #2C6B7A;
+    box-shadow: 0 4px 24px 0 rgba(44,107,122,0.18);
+}
+@media (max-width: 900px) {
+    .law-hero-content {
+        margin-left: 4vw;
+        padding: 3rem 0 3rem 0;
+    }
+    .law-hero-content h1 {
+        font-size: 2.1rem;
+    }
+}
+@media (max-width: 600px) {
+    .law-hero {
+        min-height: 340px;
+    }
+    .law-hero-content {
+        margin-left: 0;
+        padding: 2.2rem 1.2rem 2.2rem 1.2rem;
+        max-width: 100%;
+    }
+    .law-hero-content h1 {
+        font-size: 1.3rem;
+    }
+    .law-hero-content p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    .law-hero-cta {
+        font-size: 0.98rem;
+        padding: 0.7rem 1.2rem;
+    }
+}
+
+.law-section { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 3.5rem 1rem 2.5rem 1rem; 
+}
+
+.law-section h2 { 
+    font-size: 2rem; 
+    color: #1A2340; 
+    font-weight: 700; 
+    margin-bottom: 1.2rem; 
+    text-align: center; 
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+}
+
+.law-section p { 
+    color: #3A4666; 
+    font-size: 1.1rem; 
+    line-height: 1.7; 
+    text-align: center; 
+    font-weight: 400;
+}
+
+.law-usecases { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1.5rem; 
+    justify-content: center; 
+    margin: 2.5rem 0 1.5rem 0; 
+}
+
+.law-usecase-card { 
+    background: #fff; 
+    border-radius: 1rem; 
+    border: 1px solid #E0E0E0; 
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.06); 
+    padding: 2rem 1.3rem; 
+    min-width: 220px; 
+    max-width: 260px; 
+    flex: 1 1 220px; 
+    text-align: left; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+.law-usecase-card svg { 
+    margin-bottom: 1rem; 
+    color: #1E4D5C; 
+}
+
+.law-usecase-card h3 { 
+    font-size: 1.1rem; 
+    color: #1A2340; 
+    font-weight: 600; 
+    margin-bottom: 0.5rem; 
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+}
+
+.law-usecase-card p { 
+    font-size: 1rem; 
+    color: #3A4666; 
+    text-align: left; 
+    margin: 0; 
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.law-benefits { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1.5rem; 
+    justify-content: center; 
+    margin: 2.5rem 0 1.5rem 0; 
+}
+
+.law-benefit { 
+    background: #F0F7FA; 
+    border-radius: 1rem; 
+    border: 1px solid #B8D4E0; 
+    padding: 1.2rem 1.2rem; 
+    min-width: 180px; 
+    max-width: 240px; 
+    flex: 1 1 180px; 
+    color: #1E4D5C; 
+    font-weight: 600; 
+    text-align: center; 
+    letter-spacing: -0.01em;
+}
+
+.law-faq { 
+    margin: 2.5rem auto 0 auto; 
+    max-width: 700px; 
+}
+
+.law-faq h2 { 
+    margin-bottom: 1.5rem; 
+}
+
+.law-faq-list { 
+    margin: 0; 
+    padding: 0; 
+}
+
+.law-faq-item { 
+    margin-bottom: 1.2rem; 
+    border-radius: 0.7rem; 
+    background: #fff; 
+    border: 1px solid #E0E0E0; 
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04); 
+}
+
+.law-faq-q { 
+    color: #1A2340; 
+    font-weight: 600; 
+    font-size: 1.08rem; 
+    margin: 0; 
+    padding: 1.1rem 1.5rem 1.1rem 2.2rem; 
+    cursor: pointer; 
+    position: relative; 
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+}
+
+.law-faq-q::before { 
+    content: '+'; 
+    color: #1E4D5C; 
+    font-size: 1.3rem; 
+    position: absolute; 
+    left: 1rem; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    transition: transform 0.2s; 
+}
+
+.law-faq-item.open .law-faq-q::before { 
+    content: '-'; 
+}
+
+.law-faq-a { 
+    color: #3A4666; 
+    font-size: 1.05rem; 
+    padding: 0 2.2rem 1.1rem 2.2rem; 
+    display: none; 
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.law-faq-item.open .law-faq-a { 
+    display: block; 
+}
+
+.law-cta-section { 
+    text-align: center; 
+    margin: 3.5rem 0 2rem 0; 
+}
+
+.law-cta-section .cta-question { 
+    color: #1A2340; 
+    font-size: 1.18rem; 
+    font-weight: 500; 
+    margin-bottom: 0.3rem; 
+    letter-spacing: -0.01em;
+}
+
+.law-cta-section .cta-button { 
+    margin: 0 auto; 
+    background: #1E4D5C; 
+    color: #fff; 
+    border: none; 
+    border-radius: 6px; 
+    padding: 0.9rem 2.2rem; 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    letter-spacing: -0.01em; 
+    text-decoration: none; 
+    transition: background 0.2s, color 0.2s; 
+    display: inline-block; 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.law-cta-section .cta-button:hover { 
+    background: #0F2A35; 
+    color: #fff; 
+}
+
+@media (max-width: 900px) { 
+    .law-usecases, .law-benefits { 
+        flex-direction: column; 
+        align-items: center; 
+    } 
+    .law-nav-container { 
+        padding: 0.5rem 1rem; 
+    } 
+}
+
+.law-centered-subhead {
+    text-align: center;
+    color: #1A2340;
+}
+
+.law-section-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    color: #1A2340;
+    text-align: center;
+    margin-top: 3.5rem;
+    margin-bottom: 2.2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #E0E0E0;
+    padding-bottom: 0.7rem;
+}
+.law-subsection-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #3A4666;
+    text-align: center;
+    margin-top: 2.2rem;
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.01em;
+}
+.law-divider {
+    border-bottom: 1px solid #E0E0E0;
+    margin: 2.5rem 0 2.5rem 0;
+}
+.law-benefits-block,
+.law-usecases-block {
+    margin-bottom: 2.5rem;
+}
+.law-benefits-block {
+    padding-bottom: 1.5rem;
+}
+
+.law-cta-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1A2340;
+    text-align: center;
+    margin-bottom: 0.7rem;
+    margin-top: 0.2rem;
+}
+.law-cta-subhead {
+    font-size: 1.08rem;
+    color: #3A4666;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.law-cta-split {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 3.5rem auto 2rem auto;
+    padding: 0 1rem;
+    margin-left: 4vw;
+}
+.law-cta-left {
+    flex: 1 1 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 420px;
+    padding: 2.5rem 0;
+}
+.law-cta-right {
+    flex: 1 1 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 320px;
+}
+.law-cta-right .calendly-inline-widget {
+    width: 100%;
+    min-width: 320px;
+    max-width: 420px;
+    height: 700px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px 0 rgba(30,77,92,0.08);
+    background: #fff;
+}
+@media (max-width: 900px) {
+    .law-cta-split {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 0.5rem;
+        margin-left: 0;
+    }
+    .law-cta-left, .law-cta-right {
+        max-width: 100%;
+        padding: 0;
+    }
+    .law-cta-right .calendly-inline-widget {
+        max-width: 100%;
+        min-width: 0;
+        height: 600px;
+    }
+}
+
+.law-intro-revamp {
+    max-width: 900px;
+    margin: 0 auto 2.5rem auto;
+    padding: 3.5rem 1rem 2.5rem 1rem;
+    background: none;
+}
+.law-intro-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1A2340;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: unset;
+}
+.law-intro-body {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #3A4666;
+    font-size: 1.13rem;
+    line-height: 1.7;
+    text-align: left;
+}
+.law-intro-body p {
+    margin-bottom: 1.1rem;
+}
+.law-intro-body strong {
+    color: #1A2340;
+    font-weight: 600;
+}
+.law-intro-benefits {
+    list-style: disc inside;
+    margin: 1.1rem 0 1.1rem 1.2rem;
+    padding: 0;
+    color: #1A2340;
+    font-size: 1.08rem;
+    font-weight: 500;
+}
+.law-intro-benefits li {
+    margin-bottom: 0.5rem;
+}
+.law-intro-cta {
+    display: inline-block;
+    margin-top: 1.7rem;
+    font-size: 1.08rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border-radius: 8px;
+    text-transform: none;
+    padding: 0.95rem 2.2rem;
+    color: #fff;
+    background: #1E4D5C;
+    border: 2px solid #1E4D5C;
+    transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s;
+    text-decoration: none;
+    box-shadow: 0 2px 12px 0 rgba(30,77,92,0.10);
+}
+.law-intro-cta:hover, .law-intro-cta:focus {
+    background: #2C6B7A;
+    color: #fff;
+    border-color: #2C6B7A;
+    box-shadow: 0 4px 24px 0 rgba(44,107,122,0.18);
+}
+.law-intro-benefits-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+    margin-bottom: 1.2rem;
+}
+.law-intro-benefits-chips .law-benefit {
+    min-width: 220px;
+    max-width: 260px;
+    flex: 1 1 220px;
+    text-align: center;
+}
+.law-intro-benefits-chips .law-benefit:nth-child(1),
+.law-intro-benefits-chips .law-benefit:nth-child(2),
+.law-intro-benefits-chips .law-benefit:nth-child(3) {
+    /* First row */
+}
+.law-intro-benefits-chips .law-benefit:nth-child(4),
+.law-intro-benefits-chips .law-benefit:nth-child(5) {
+    /* Second row */
+}
+@media (max-width: 700px) {
+    .law-intro-title {
+        font-size: 0.98rem;
+        max-width: 100vw;
+        white-space: normal;
+    }
+    .law-intro-benefits-chips {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+    .law-intro-benefits-chips .law-benefit {
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+.law-intro-cta-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.2rem;
+}
+.law-intro-benefit-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2.2rem;
+    margin-bottom: 2.2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.law-intro-benefit-card {
+    background: rgba(30, 77, 92, 0.1); /* light navy tint, 5% opacity */
+    border-radius: 1rem;
+    border: 2px solid #1A2340;
+    box-shadow: 0 6px 32px 0 rgba(26,35,64,0.13);
+    padding: 1.3rem 1.1rem;
+    min-width: 220px;
+    max-width: 260px;
+    flex: 1 1 220px;
+    text-align: center;
+    font-size: 1.08rem;
+    color: #1A2340;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.law-intro-benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.2rem;
+    flex-shrink: 0;
+}
+@media (max-width: 700px) {
+    .law-intro-benefit-cards {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+    .law-intro-benefit-card {
+        min-width: 0;
+        max-width: 100%;
+    }
+}

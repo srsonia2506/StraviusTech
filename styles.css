@@ -385,7 +385,7 @@ body {
 }
 
 .why-stravius .container {
-    max-width: 1100px;
+    max-width: 900px;
 }
 
 .what-we-do {
@@ -426,11 +426,11 @@ body {
 
 .why-stravius .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4.7rem;
+    max-width: 700px;
+    margin: 0 auto 1rem auto;
     text-align: center;
-    margin-bottom: 1rem;
-    padding: 1rem 0;
 }
 
 .feature-item {
@@ -447,7 +447,7 @@ body {
 }
 
 .feature-icon {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.1rem;
     color: #00D1B2;
 }
 
@@ -471,10 +471,10 @@ body {
 }
 
 .feature-item p {
-    color: #a0a0a0;
-    line-height: 1.5;
-    max-width: 220px;
-    margin: 0 auto;
+    max-width: 180px;
+    margin: 0.5rem auto 0 auto;
+    white-space: normal;
+    line-height: 1.4;
 }
 
 .why-stravius-details {
@@ -998,4 +998,20 @@ body {
 
 .what-we-do-cta .cta-question {
     margin-bottom: 0.3rem;
+}
+
+.contact .calendly-inline-widget {
+    display: unset;
+    margin: unset;
+    max-width: unset;
+    width: unset;
+    min-width: 320px;
+    height: 700px;
+}
+.contact .contact-grid {
+    display: grid;
+}
+.contact .container {
+    max-width: 1140px;
+    margin: 0 auto;
 } 
