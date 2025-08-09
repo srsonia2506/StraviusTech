@@ -374,7 +374,7 @@ body {
 .content-wrapper {
     background-color: transparent;
     color: #a0a0a0;
-    padding: 6rem 0;
+    padding: 4rem 0; /* overall wrapper spacing */
     overflow-x: hidden;
 }
 
@@ -384,40 +384,31 @@ body {
     padding: 0 1rem;
 }
 
-.why-stravius .container {
-    max-width: 900px;
+:root {
+    --section-space: 3.5rem;
+}
+@media (max-width: 768px) {
+    :root { --section-space: 2.5rem; }
 }
 
-.what-we-do {
-    padding-top: 1rem;
-    padding-bottom: 4rem;
+/* Apply consistent spacing to all main sections (excluding hero) */
+.who-we-are,
+.why-stravius,
+.what-we-do,
+.contact {
+    padding-top: var(--section-space);
+    padding-bottom: var(--section-space);
 }
 
-.what-we-do .container {
-    max-width: 1140px;
-    padding-top: 0;
+/* Neutralize divider element spacing so it doesn't add extra variation */
+.section-divider {
+    margin: 0; /* was 3-4rem */
+    height: 0; /* keep as layout marker without affecting rhythm */
 }
 
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-    margin-top: 0;
-    color: #ffffff;
-    letter-spacing: 0.05em;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, #00d1b2, #FFA654);
-}
+/* Remove section-specific overrides that fought the standard spacing */
+.who-we-are { padding: var(--section-space) 0; }
+.what-we-do { padding: var(--section-space) 0; }
 
 /* Why Stravius Section */
 .why-stravius {
@@ -447,7 +438,7 @@ body {
 }
 
 .feature-icon {
-    margin-bottom: 1.1rem;
+    /* margin-bottom: 0.45rem; */
     color: #00D1B2;
 }
 
@@ -466,15 +457,15 @@ body {
 .feature-item h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.35rem;
     color: #ffffff;
 }
 
 .feature-item p {
     max-width: 180px;
-    margin: 0.5rem auto 0 auto;
+    margin: 0.25rem auto 0 auto;
     white-space: normal;
-    line-height: 1.4;
+    line-height: 1.45;
 }
 
 .why-stravius-details {
@@ -528,7 +519,32 @@ body {
     background: transparent;
     width: 100%;
     max-width: 960px;
-    margin: 4rem auto;
+    margin: 3rem auto; /* reduced from 4rem */
+}
+
+/* Section titles with gradient underline */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 0;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    position: relative;
+    padding-bottom: 0.2rem; /* close to underline */
+    margin-bottom: 1.6rem;  /* space after underline before content */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, #00d1b2, #FFA654);
+    border-radius: 2px;
 }
 
 /* Founder Section */
@@ -703,14 +719,14 @@ body {
     margin-top: 2rem;
     font-size: 1.2rem;
     color: #a0a0a0;
-    padding-bottom: 3rem;
+    padding-bottom: 2.5rem; /* tighter spacing; previously 4.5rem */
 }
 
 .what-we-do-cta p {
     margin-bottom: 1.5rem;
 }
 
-.what-we-do-cta a {
+.what-we-do-cta a:not(.cta-button) {
     color: #00D1B2;
     text-decoration: none;
     font-weight: 500;
@@ -718,7 +734,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.what-we-do-cta a:hover {
+.what-we-do-cta a:not(.cta-button):hover {
     color: #FFA654;
     border-bottom-color: #FFA654;
 }
@@ -937,7 +953,7 @@ body {
 }
 
 .who-we-are {
-    padding: 4rem 0;
+    padding: var(--section-space) 0;
 }
 .who-we-are-content {
     background: rgba(255,255,255,0.02);
@@ -1014,4 +1030,13 @@ body {
 .contact .container {
     max-width: 1140px;
     margin: 0 auto;
+} 
+
+/* Ensure What We Do CTA hover matches global CTA hover */
+.what-we-do-cta .cta-button:hover {
+    background: #00D1B2;
+    color: #0E0E1A !important;
+    border-color: #00D1B2;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 209, 178, 0.3);
 } 
