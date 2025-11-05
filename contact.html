@@ -50,7 +50,7 @@
                 </div>
                 
                 <div class="contact-form-page-wrapper">
-                    <form class="contact-form-page-form" id="contactFormPage" action="https://formsubmit.co/sonia@straviustech.com" method="POST">
+                    <form class="contact-form-page-form" id="contactFormPage" action="https://formsubmit.co/a84cd1af47e6a4ed1226e09928d657eb" method="POST">
                         <div class="form-field-wrapper">
                             <label for="name" class="form-label">Name *</label>
                             <input type="text" name="name" id="name" required>
@@ -73,14 +73,14 @@
                             </div>
                         </div>
                         
-                        <div class="form-field-wrapper form-group" id="email-group" style="display: none;">
+                        <div class="form-field-wrapper form-group" id="email-group">
                             <label for="email" class="form-label">Email address *</label>
-                            <input type="email" name="email" id="email">
+                            <input type="email" name="email" id="email" required>
                         </div>
                         
-                        <div class="form-field-wrapper form-group" id="phone-group" style="display: none;">
+                        <div class="form-field-wrapper form-group" id="phone-group">
                             <label for="phone" class="form-label">Phone number *</label>
-                            <input type="tel" name="phone" id="phone">
+                            <input type="tel" name="phone" id="phone" required>
                         </div>
                         
                         <div class="form-field-wrapper">
@@ -139,13 +139,7 @@
       });
     </script>
     <script>
-      // Contact form conditional fields
-      const emailGroup = document.getElementById('email-group');
-      const phoneGroup = document.getElementById('phone-group');
-      const emailInput = document.getElementById('email');
-      const phoneInput = document.getElementById('phone');
-      
-      // Contact method radio buttons
+      // Contact method card selection
       const contactEmailRadio = document.getElementById('contact-email');
       const contactPhoneRadio = document.getElementById('contact-phone');
       const emailCard = contactEmailRadio ? contactEmailRadio.nextElementSibling : null;
@@ -158,16 +152,8 @@
           
           if (contactEmailRadio.checked) {
             emailCard.classList.add('selected');
-            emailGroup.style.display = 'block';
-            phoneGroup.style.display = 'none';
-            emailInput.setAttribute('required', 'required');
-            phoneInput.removeAttribute('required');
           } else if (contactPhoneRadio.checked) {
             phoneCard.classList.add('selected');
-            phoneGroup.style.display = 'block';
-            emailGroup.style.display = 'none';
-            phoneInput.setAttribute('required', 'required');
-            emailInput.removeAttribute('required');
           }
         }
       }
