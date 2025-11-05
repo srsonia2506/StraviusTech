@@ -7,7 +7,8 @@
     <meta name="description" content="Stravius Tech delivers cutting-edge AI solutions and strategic technology consulting for forward-thinking businesses.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Strategic Flow Typography: Serif for headlines, Sans-serif for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Recoleta:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,8 +20,8 @@
                     <circle cx="24" cy="24" r="8" fill="url(#gradient)"/>
                     <defs>
                         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#00D1B2"/>
-                            <stop offset="100%" style="stop-color:#FFA654"/>
+                            <stop offset="0%" style="stop-color:#5FB27C"/>
+                            <stop offset="100%" style="stop-color:#A2BFD0"/>
                         </linearGradient>
                     </defs>
                 </svg>
@@ -29,8 +30,10 @@
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#founder">Who We Are</a></li>
-                <li><a href="#why-stravius">Why Stravius</a></li>
+                <li><a href="#who-we-help">Who We Help</a></li>
                 <li><a href="#what-we-do">What We Do</a></li>
+                <li><a href="#why-now">Why Now</a></li>
+                <li><a href="#how-we-work">How We Work</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Open menu">
@@ -39,69 +42,202 @@
         </div>
     </nav>
     <header class="hero" id="hero">
-        <!-- Background Graphics -->
-        <div class="hero-background">
-            <div class="neural-network"></div>
-            <div class="data-grid"></div>
-            <div class="particles"></div>
-        </div>
-        
-        <!-- Main Content -->
-        <div class="hero-content">
-            <div class="logo-container">
-                <div class="logo-mark">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                        <path d="M24 4L44 24L24 44L4 24L24 4Z" stroke="url(#gradient)" stroke-width="2" fill="none"/>
-                        <circle cx="24" cy="24" r="8" fill="url(#gradient)"/>
-                        <defs>
-                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#00D1B2"/>
-                                <stop offset="100%" style="stop-color:#FFA654"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
+        <div class="hero-inner">
+            <div class="hero-brand">At Stravius</div>
+            <h1 class="hero-typing" aria-live="polite" aria-atomic="true">
+                <span class="static">We Build </span>
+                <span class="dynamic" id="typingWord"></span>
+                <!-- <span class="cursor" aria-hidden="true"></span> -->
+            </h1>
+            <div class="hero-cta-link-container">
+                <a href="#contact" class="hero-cta-link">Schedule Your Call</a>
             </div>
-            
-            <h1 class="brand-name">STRAVIUS TECH</h1>
-            <p class="tagline">End-to-end AI Deployment from Strategy to Scale</p>
-            
-            <div class="cta-container">
-                <a href="#contact" class="cta-button">
-                    <span>Schedule Your AI Strategy Call</span>
-                    <div class="button-glow"></div>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            <div class="scroll-line"></div>
         </div>
     </header>
 
     <main class="content-wrapper">
         <section class="who-we-are" id="founder">
             <div class="container">
-                <h2 class="section-title">WHO WE ARE</h2>
+                <h2 class="section-title">Who We Are</h2>
                 <div class="who-we-are-content">
-                    <p>At Stravius Tech, AI isn't a buzzword—it's the key to solving your real business challenges. We help you drive measurable results, whether you're cutting costs, scaling operations, or unlocking new insights. With a blend of deep technical expertise and a business-first mindset, we make AI work for your goals—not the other way around.</p>
-                    <p>Forget the jargon. Our focus is on delivering results, not overpromises. From strategy to execution, we guide you through every step, building AI solutions that scale with your business and deliver value right out of the gate. We're not here to sell you on bleeding-edge tech; we're here to show you how AI can transform your bottom line.</p>
+                    <p>At Stravius Tech, we turn operational complexity into competitive advantage through applied AI.</p>
+                    <p>We design and build AI systems that <span class="keyword">automate manual workflows</span>, <span class="keyword">unify siloed data</span>, and help businesses <span class="keyword">scale</span> smarter. The result: faster decisions, leaner operations, and <span class="keyword">measurable ROI—often within 90 days</span>.</p>
+                    <p>We bridge the gap between business goals and technical execution—making AI work where it matters most: your bottom line.</p>
                 </div>
-                <div class="who-we-are-cta cta-container">
+                <div class="who-we-are-cta">
                     <p class="cta-question">Ready to unlock your business's potential with AI?</p>
-                    <a href="#contact" class="cta-button">Schedule Your AI Strategy Call</a>
+                    <a href="#contact" class="hero-cta-link">Schedule Your Call</a>
                 </div>
             </div>
         </section>
         <div class="section-divider"></div>
-        <section class="why-stravius" id="why-stravius">
+        <section class="who-we-help" id="who-we-help">
             <div class="container">
-                <h2 class="section-title">WHY STRAVIUS</h2>
+                <h2 class="section-title">Who We Help</h2>
+                <p class="who-we-help-subtitle">We partner with operations, technology, and transformation leaders who need AI systems that deliver measurable business outcomes.</p>
                 
-                <div class="why-stravius-details">
-                    <p>Stravius stands for Strategy, Vision, and Us.</p>
-                    <p>We don't just build AI—we align it with your business goals and long-term growth.</p>
+                <div class="who-we-help-grid">
+                    <div class="who-we-help-item">
+                        <div class="who-we-help-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>Professional Services</h3>
+                        <p>Law firms, consulting, and agencies automating document processing, client research, and time tracking to reduce costs and improve client delivery.</p>
+                    </div>
+                    
+                    <div class="who-we-help-item">
+                        <div class="who-we-help-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                        </div>
+                        <h3>Logistics & Manufacturing</h3>
+                        <p>Operations teams optimizing supply chains, inventory management, and production workflows with predictive analytics and automation.</p>
+                    </div>
+                    
+                    <div class="who-we-help-item">
+                        <div class="who-we-help-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3>Tech-Enabled Businesses</h3>
+                        <p>Companies scaling operations through intelligent automation, unified data platforms, and AI-powered decision support systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+        <section class="what-we-do" id="what-we-do">
+            <div class="container">
+                <h2 class="section-title">What We Do</h2>
+                <p class="what-we-do-subtitle">We design and deploy AI systems that make operations faster, decisions smarter, and infrastructure stronger — built around measurable ROI.</p>
+                
+                <div class="what-we-do-grid">
+                    <div class="what-we-do-card">
+                        <div class="what-we-do-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <h3>Optimize Operations</h3>
+                        <p class="what-we-do-card-desc">Automate the repetitive to save time and cost.</p>
+                        <ul class="what-we-do-card-bullets">
+                            <li>Workflow and process automation (RPA, orchestration)</li>
+                            <li>AI copilots and internal chat systems that actually know your business</li>
+                            <li>Document and data automation (OCR, NLP)</li>
+                        </ul>
+                        <p class="what-we-do-card-outcome">Lower costs, faster turnaround, and scalable efficiency.</p>
+                    </div>
+                    
+                    <div class="what-we-do-card">
+                        <div class="what-we-do-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <h3>Amplify Intelligence</h3>
+                        <p class="what-we-do-card-desc">Turn your data into faster, smarter decisions.</p>
+                        <ul class="what-we-do-card-bullets">
+                            <li>Forecasting and predictive models for operations and finance</li>
+                            <li>Unified dashboards and knowledge search across teams</li>
+                            <li>Natural-language insights from documents, CRMs, and systems</li>
+                        </ul>
+                        <p class="what-we-do-card-outcome">Faster, data-backed decisions and measurable ROI.</p>
+                    </div>
+                    
+                    <div class="what-we-do-card">
+                        <div class="what-we-do-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                        <h3>Build for Scale</h3>
+                        <p class="what-we-do-card-desc">Create the foundation that keeps AI reliable, secure, and adaptable.</p>
+                        <ul class="what-we-do-card-bullets">
+                            <li>Modernize infrastructure for cloud and data readiness</li>
+                            <li>Integrate with ERP, CRM, and workflow systems</li>
+                            <li>Ensure security, compliance, and performance from day one</li>
+                        </ul>
+                        <p class="what-we-do-card-outcome">Scalable systems that grow with your business — safely.</p>
+                    </div>
+                </div>
+                
+                <div class="what-we-do-cta">
+                    <a href="#contact" class="what-we-do-cta-link">Schedule Your AI Strategy Call →</a>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+        <section class="why-now" id="why-now">
+            <div class="container">
+                <h2 class="section-title">Why Now</h2>
+                <p class="why-now-subtitle">AI isn't coming — it's already reshaping how companies work. Those who adapt early build compounding advantages in speed, cost, and insight.</p>
+                
+                <div class="why-now-grid">
+                    <div class="why-now-card">
+                        <div class="why-now-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <h3>AI Adoption Is Accelerating</h3>
+                        <p>87% of executives say AI gives their business a competitive edge — yet fewer than half have a clear roadmap.</p>
+                    </div>
+                    
+                    <div class="why-now-card">
+                        <div class="why-now-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                            </svg>
+                        </div>
+                        <h3>Efficiency Is Redefining Competition</h3>
+                        <p>Leaders in logistics, manufacturing, and finance report 5–10× productivity gains through automation.</p>
+                    </div>
+                    
+                    <div class="why-now-card">
+                        <div class="why-now-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                            </svg>
+                        </div>
+                        <h3>Research Confirms the Shift</h3>
+                        <p>McKinsey 2024: AI could automate up to 70% of business tasks by 2030.<br>Deloitte: Workflow automation drives 5× faster decision cycles.</p>
+                    </div>
+                    
+                    <div class="why-now-card why-now-card-dark">
+                        <div class="why-now-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <h3>The Future Is Already in Motion</h3>
+                        <p>Amazon, Siemens, and UPS are embedding AI to optimize logistics and reduce costs.</p>
+                        <p class="why-now-cta-text">→ We help you close that gap.</p>
+                    </div>
+                </div>
+                
+                <div class="why-now-footer-cta">
+                    <a href="#contact" class="why-now-cta-link">See the Research →</a>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+        <section class="how-we-work" id="how-we-work">
+            <div class="container">
+                <h2 class="section-title">How We Work</h2>
+                
+                <div class="how-we-work-intro">
+                    <p>We built Stravius on three principles that define how we work: Strategy, Vision and Us.</p>
                 </div>
 
                 <div class="features">
@@ -110,118 +246,243 @@
                            <img src="img/brain.png" alt="Strategy icon">
                         </div>
                         <h3>Strategy</h3>
-                        <p>Tactical thinking, not hype.</p>
+                        <p>We start with your business goals, not the latest tech trend.</p>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">
                             <img src="img/telescope.png" alt="Vision icon">
                         </div>
                         <h3>Vision</h3>
-                        <p>Systems that scale with your business.</p>
+                        <p>We design systems that scale with your business, built to last.</p>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">
                             <img src="img/handshake.png" alt="Us icon">
                         </div>
                         <h3>Us</h3>
-                        <p>A team that builds like it's their own.</p>
+                        <p>Small team that builds like it's our own product since your success is how we grow.</p>
                     </div>
                 </div>
 
                 <div class="summary-box">
-                    <p>That's Stravius: strategy with vision—delivered by people who care like it's their own product.</p>
+                    <p>That's Stravius - thoughtful work built to move your business forward.</p>
                 </div>
                 
-                <div class="cta-container">
-                    <a href="#contact" class="cta-button">Book Your Free Consultation</a>
+                <div class="how-we-work-cta">
+                    <a href="#contact" class="hero-cta-link">Schedule Your Call</a>
                 </div>
             </div>
         </section>
         <div class="section-divider"></div>
-        <section class="what-we-do" id="what-we-do">
+        <section class="approach" id="approach">
             <div class="container">
-                <h2 class="section-title">WHAT WE DO</h2>
-                <div class="services-grid">
-                    <div class="service-category">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                <h2 class="section-title">Our 4-Step Framework for Measurable AI ROI</h2>
+                <p class="approach-subtitle">From audit to scale, we design and deploy AI systems that deliver measurable efficiency and ROI — without disrupting your existing workflows.</p>
+                <div class="roadmap">
+                    <div class="roadmap-step step-audit">
+                        <details class="step">
+                            <summary>
+                                <div class="step-header">
+                                    <div class="step-icon" aria-hidden="true">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="11" cy="11" r="8"/>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
                             </svg>
                         </div>
-                        <h3>AI Strategy & Readiness</h3>
-                        <ul>
-                            <li>AI Readiness Audits & Roadmaps</li>
-                            <li>Business Process Optimization</li>
-                            <li>Strategy & Innovation Consulting</li>
-                            <li>IT Infrastructure Modernization & Migration</li>
-                            <li>Company-Specific ChatGPT & Knowledge Systems</li>
-                        </ul>
+                                    <div class="step-content">
+                                        <h3>Audit</h3>
+                                        <p class="step-outcome">Identify opportunities where AI creates immediate value.</p>
+                                    </div>
+                                </div>
+                            </summary>
+                            <p class="step-microcopy">We assess your data, workflows, and systems to pinpoint high-ROI automation and intelligence opportunities — not theoretical, but executable.</p>
+                            <ul>
+                                <li>Assess workflows and data readiness</li>
+                                <li>Uncover inefficiencies and bottlenecks</li>
+                                <li>Align AI strategy with business goals</li>
+                            </ul>
+                        </details>
                     </div>
-                    <div class="service-category">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 8V4H8"/>
-                                <rect width="16" height="12" x="4" y="8" rx="2"/>
-                                <path d="M2 14h2"/>
-                                <path d="M20 14h2"/>
-                                <path d="M15 13v2"/>
-                                <path d="M9 13v2"/>
-                            </svg>
-                        </div>
-                        <h3>Automation & Intelligence</h3>
-                        <ul>
-                            <li>RPA (Robotic Process Automation)</li>
-                            <li>Chatbots & LLM Integrations</li>
-                            <li>AI-Powered Video & Voice Generation</li>
-                            <li>Computer Vision & OCR Pipelines</li>
-                            <li>Custom ML/DL Model Deployment</li>
+                    <div class="roadmap-step step-design">
+                        <details class="step">
+                            <summary>
+                                <div class="step-header">
+                                    <div class="step-icon" aria-hidden="true">
+                                        <img src="img/design.svg" width="24" height="24" alt="Design icon">
+                                    </div>
+                                    <div class="step-content">
+                                        <h3>Design</h3>
+                                        <p class="step-outcome">Blueprint for measurable impact.</p>
+                                    </div>
+                                </div>
+                            </summary>
+                            <p class="step-microcopy">We design use-case roadmaps aligned with your goals — from RPA to NLP — with clear milestones, governance, and success metrics.</p>
+                            <ul>
+                                <li>Prioritize high-ROI AI use cases</li>
+                                <li>Build roadmap for tangible results quickly</li>
+                                <li>Validate approach with stakeholders</li>
                         </ul>
+                        </details>
                     </div>
-                    <div class="service-category">
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 18l6-6-6-6"/>
-                                <path d="M8 6l-6 6 6 6"/>
-                            </svg>
+                    <div class="roadmap-step step-build">
+                        <details class="step">
+                            <summary>
+                                <div class="step-header">
+                                    <div class="step-icon" aria-hidden="true">
+                                        <img src="img/build.svg" width="24" height="24" alt="Build icon">
+                                    </div>
+                                    <div class="step-content">
+                                        <h3>Build & Deploy</h3>
+                                        <p class="step-outcome">From pilot to production.</p>
+                                    </div>
                         </div>
-                        <h3>Engineering & Implementation</h3>
-                        <ul>
-                            <li>Web & Mobile App Development</li>
-                            <li>Internal Systems & Workflow Tools</li>
-                            <li>Application Integration (ERP/CRM/etc.)</li>
-                            <li>Database Management & DevOps</li>
-                            <li>Security (OWASP, Compliance Readiness)</li>
+                            </summary>
+                            <p class="step-microcopy">We build secure, integrated AI systems that scale within your current tech stack — no black boxes, no bloat.</p>
+                            <ul>
+                                <li>Deploy automation, RPA, chatbots, and ML models</li>
+                                <li>Integrate with ERP, CRM, and internal systems</li>
+                                <li>Ensure security, compliance, and reliability</li>
                         </ul>
+                        </details>
+                    </div>
+                    <div class="roadmap-step step-scale">
+                        <details class="step">
+                            <summary>
+                                <div class="step-header">
+                                    <div class="step-icon" aria-hidden="true">
+                                        <img src="img/scale.svg" width="24" height="24" alt="Scale icon">
+                                    </div>
+                                    <div class="step-content">
+                                        <h3>Scale</h3>
+                                        <p class="step-outcome">Measure ROI and extend success.</p>
+                                    </div>
+                        </div>
+                            </summary>
+                            <p class="step-microcopy">We optimize performance, document ROI, and expand automation across departments — creating measurable compounding efficiency.</p>
+                            <ul>
+                                <li>Track ROI in productivity and cost savings</li>
+                                <li>Document lessons and optimize workflows</li>
+                                <li>Scale solutions across teams and units</li>
+                        </ul>
+                        </details>
                     </div>
                 </div>
-                <div class="what-we-do-cta">
-                    <p class="cta-question">Not sure where to start?</p>
-                    <a href="#contact" class="cta-button">Schedule Your AI Strategy Call</a>
+                <div class="roadmap-cta">
+                    <p class="lead-in">See how your business fits into this framework</p>
+                    <a href="#contact" class="cta-button">Book a Free AI Strategy Call</a>
                 </div>
             </div>
         </section>
         <div class="section-divider"></div>
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="faq-layout">
+                    <div class="faq-header">
+                        <span class="faq-tag">FAQ Section</span>
+                        <h2 class="faq-title">Frequently Asked<br>Questions</h2>
+                    </div>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>When will we see measurable ROI?</span>
+                                <span class="faq-toggle"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Most clients see tangible results within 30–90 days.</p>
+                                <p>We start with a focused pilot that delivers one quick win—often in automation or analytics—then scale once ROI is proven.</p>
+                                <p>The goal: fast results, no wasted effort, and systems that grow with your business.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Who do you work best with?</span>
+                                <span class="faq-toggle"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We work best with operations, technology, and transformation leaders in industries where manual processes and scattered data slow teams down—like professional services, logistics, manufacturing, and tech-enabled businesses.</p>
+                                <p>Our small, senior team means direct collaboration and faster execution—no bloated project handoffs or generic templates.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>How do you work with internal teams?</span>
+                                <span class="faq-toggle"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We collaborate directly with your Ops and IT leads.</p>
+                                <p>You bring the business context; we bring the AI and integration layer.</p>
+                                <p>That means shared documentation, transparent progress, and enablement so your team can manage and extend the systems after delivery.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>What happens after deployment?</span>
+                                <span class="faq-toggle"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Every build includes an operational handoff and post-launch support window.</p>
+                                <p>We monitor model accuracy, automation uptime, and usage metrics to ensure stability.</p>
+                                <p>Clients can extend for MLOps, retraining, or incremental automation to keep performance strong as your business evolves.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>How do you handle data security and compliance?</span>
+                                <span class="faq-toggle"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Security and compliance are embedded from day one.</p>
+                                <p>We align with your internal IT policies, follow frameworks like GDPR, SOC 2 Type II, and HIPAA, and enforce data encryption, access controls, and audit logs at every layer.</p>
+                                <p>We start every engagement with a data governance review—so you always know how your data is handled.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="contact" id="contact">
             <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-text">
-                        <h2>Ready to explore what AI can do for you? Let's talk.</h2>
+                <div class="contact-hero">
+                    <h2 class="contact-hero-title">Let's build clarity before we build AI.</h2>
+                    <p class="contact-hero-subtitle">Book a 30-minute strategy call — no sales pitch.</p>
+                </div>
+                
+                <div class="calendly-card">
+                    <div class="calendly-intro">
+                        <h3 class="calendly-title">In this call, we'll:</h3>
+                        <ul class="calendly-benefits">
+                            <li>Identify 1–2 quick-win AI opportunities</li>
+                            <li>Clarify your data readiness</li>
+                            <li>Map next steps toward measurable ROI</li>
+                        </ul>
                     </div>
-                    <!--
-                    <form class="contact-form" action="#">
-                        <input type="text" name="name" placeholder="Name" required>
-                        <input type="email" name="email" placeholder="Email" required>
-                        <textarea name="message" rows="5" placeholder="Message" required></textarea>
-                        <button type="submit" class="cta-button">Send Message</button>
-                    </form>
-                    -->
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/srsoniaintech/30min?background_color=0e0e1a&text_color=ffffff&primary_color=00d1b2" style="min-width:320px;height:700px;"></div>
+                    <div class="calendly-widget-container">
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/srsoniaintech/30min?background_color=0e0e1a&text_color=ffffff&primary_color=00d1b2" style="min-width:320px;height:80vh;"></div>
                     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    </div>
+                </div>
+                
+                <div class="contact-secondary-cta">
+                    <p class="secondary-cta-text">Prefer to start with a question instead?</p>
+                    <p class="secondary-cta-subtext">Send us a quick note — we usually reply within 1 business day.</p>
+                    <a href="contact.html" class="secondary-cta-button">Send a Message →</a>
                 </div>
             </div>
         </section>
     </main>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">Stravius Tech</span>
+                </div>
+                <div class="footer-contact">
+                    <a href="tel:+6581813791" class="footer-link">📞 +65 8181-3791</a>
+                    <a href="mailto:sonia@straviustech.com" class="footer-link">💌 sonia@straviustech.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script>
       const navToggle = document.querySelector('.nav-toggle');
       const navLinks = document.querySelector('.nav-links');
@@ -234,6 +495,133 @@
           navLinks.classList.remove('open');
         });
       });
+    </script>
+    <script>
+      // Typing effect for hero headline
+      (function() {
+        const el = document.getElementById('typingWord');
+        if (!el) return;
+        const words = [
+          { text: 'Strategy.', color: '#016545' },
+          { text: 'Systems.',  color: '#016545' },
+          { text: 'Scale.',    color: '#016545' }
+        ];
+        const typeDelay = 90;      // ms per char
+        const holdDelay = 600;     // pause after full word
+        const eraseDelay = 60;     // ms per char on erase
+        let i = 0, j = 0, erasing = false;
+
+        function loop() {
+          const current = words[i];
+          el.style.color = current.color;
+          if (!erasing) {
+            el.textContent = current.text.slice(0, j + 1);
+            j++;
+            if (j === current.text.length) {
+              erasing = true;
+              return setTimeout(loop, holdDelay);
+            }
+            return setTimeout(loop, typeDelay);
+          } else {
+            el.textContent = current.text.slice(0, j - 1);
+            j--;
+            if (j === 0) {
+              erasing = false;
+              i = (i + 1) % words.length;
+              return setTimeout(loop, 400);
+            }
+            return setTimeout(loop, eraseDelay);
+          }
+        }
+        setTimeout(loop, 500);
+      })();
+    </script>
+    <script>
+      // Collapse other steps when one opens
+      const steps = document.querySelectorAll('.approach details.step');
+      steps.forEach(step => {
+        step.addEventListener('toggle', () => {
+          if (step.open) {
+            steps.forEach(other => { if (other !== step) other.removeAttribute('open'); });
+          }
+        });
+      });
+    </script>
+    <script>
+      // FAQ accordion functionality
+      document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+          const faqItem = button.closest('.faq-item');
+          const isExpanded = button.getAttribute('aria-expanded') === 'true';
+          
+          // Close all other FAQ items
+          document.querySelectorAll('.faq-item').forEach(item => {
+            if (item !== faqItem) {
+              item.setAttribute('aria-expanded', 'false');
+              item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            }
+          });
+          
+          // Toggle current item
+          faqItem.setAttribute('aria-expanded', !isExpanded);
+          button.setAttribute('aria-expanded', !isExpanded);
+        });
+      });
+    </script>
+    <script>
+      // Contact form conditional fields
+      const contactMethod = document.getElementById('contact-method');
+      const emailGroup = document.getElementById('email-group');
+      const phoneGroup = document.getElementById('phone-group');
+      const emailInput = document.getElementById('email');
+      const phoneInput = document.getElementById('phone');
+      
+      // Contact method radio buttons
+      const contactEmailRadio = document.getElementById('contact-email');
+      const contactPhoneRadio = document.getElementById('contact-phone');
+      const emailCard = contactEmailRadio ? contactEmailRadio.nextElementSibling : null;
+      const phoneCard = contactPhoneRadio ? contactPhoneRadio.nextElementSibling : null;
+      
+      function updateContactMethodCards() {
+        if (contactEmailRadio && contactPhoneRadio && emailCard && phoneCard) {
+          // Remove selected class from both
+          emailCard.classList.remove('selected');
+          phoneCard.classList.remove('selected');
+          
+          // Add selected class to checked one
+          if (contactEmailRadio.checked) {
+            emailCard.classList.add('selected');
+            emailGroup.style.display = 'block';
+            phoneGroup.style.display = 'none';
+            emailInput.setAttribute('required', 'required');
+            phoneInput.removeAttribute('required');
+          } else if (contactPhoneRadio.checked) {
+            phoneCard.classList.add('selected');
+            phoneGroup.style.display = 'block';
+            emailGroup.style.display = 'none';
+            phoneInput.setAttribute('required', 'required');
+            emailInput.removeAttribute('required');
+          }
+        }
+      }
+      
+      if (contactEmailRadio && contactPhoneRadio) {
+        contactEmailRadio.addEventListener('change', updateContactMethodCards);
+        contactPhoneRadio.addEventListener('change', updateContactMethodCards);
+        
+        // Initialize on page load
+        updateContactMethodCards();
+      }
+      
+      // Form submission handler - FormSubmit will handle the submission
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          // Let FormSubmit handle the submission
+          // The form will submit to FormSubmit which will send the email
+          // and redirect based on _next parameter
+        });
+      }
     </script>
     
     <!-- Google Analytics -->
