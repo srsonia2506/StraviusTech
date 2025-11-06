@@ -14,26 +14,14 @@
     <nav class="glass-nav">
         <div class="nav-container">
             <a href="index.html#hero" class="nav-logo">
-                <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
-                    <path d="M24 4L44 24L24 44L4 24L24 4Z" stroke="url(#gradient)" stroke-width="2" fill="none"/>
-                    <circle cx="24" cy="24" r="8" fill="url(#gradient)"/>
-                    <defs>
-                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#5FB27C"/>
-                            <stop offset="100%" style="stop-color:#A2BFD0"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
+                <img src="img/logo.png" alt="Stravius Tech" width="20" height="32">
                 <span>Stravius Tech</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#hero">Home</a></li>
-                <li><a href="index.html#founder">Who We Are</a></li>
                 <li><a href="index.html#who-we-help">Who We Help</a></li>
                 <li><a href="index.html#what-we-do">What We Do</a></li>
-                <li><a href="index.html#why-now">Why Now</a></li>
-                <li><a href="index.html#how-we-work">How We Work</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#approach">Framework</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Open menu">
                 <span></span><span></span><span></span>
@@ -80,7 +68,32 @@
                         
                         <div class="form-field-wrapper form-group" id="phone-group">
                             <label for="phone" class="form-label">Phone number *</label>
-                            <input type="tel" name="phone" id="phone" required>
+                            <div class="phone-input-wrapper">
+                                <div class="country-selector">
+                                    <button type="button" class="country-selector-btn" id="countrySelectorBtn" aria-label="Select country">
+                                        <img src="https://flagpedia.net/data/flags/icon/36x27/sg.png" alt="Singapore" class="country-flag" id="selectedFlag">
+                                        <svg class="country-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </button>
+                                    <div class="country-dropdown" id="countryDropdown">
+                                        <div class="country-search">
+                                            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="11" cy="11" r="8"></circle>
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                            </svg>
+                                            <input type="text" class="country-search-input" id="countrySearch" placeholder="Search for countries" autocomplete="off">
+                                        </div>
+                                        <ul class="country-list" id="countryList"></ul>
+                                        <div class="no-results" id="noResults" style="display: none;">No results found</div>
+                                    </div>
+                                </div>
+                                <div class="phone-number-input">
+                                    <span class="phone-prefix" id="phonePrefix">+65</span>
+                                    <input type="tel" name="phone" id="phone" class="phone-input" placeholder=" " required autocomplete="tel" maxlength="15" pattern="[0-9]*" inputmode="numeric">
+                                    <input type="hidden" name="phone-prefix" id="phonePrefixHidden" value="+65">
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="form-field-wrapper">
@@ -117,6 +130,13 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <span class="footer-logo">Stravius Tech</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#founder" class="footer-link">About</a>
+                    <a href="index.html#how-we-work" class="footer-link">Values</a>
+                    <a href="index.html#faq" class="footer-link">FAQs</a>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms & Conditions</a>
                 </div>
                 <div class="footer-contact">
                     <a href="tel:+6581813791" class="footer-link">📞 +65 8181-3791</a>
@@ -171,6 +191,353 @@
         if (form) {
           form.innerHTML = '<div class="form-success"><h2>Thank you!</h2><p>We\'ve received your message and will reply within 1 business day.</p><a href="index.html#contact" class="secondary-cta-button">Back to Contact</a></div>';
         }
+      }
+    </script>
+    <script>
+      // Phone Number Country Selector
+      const countries = [
+        { name: "Afghanistan", prefix: 93, flag: "af" },
+        { name: "Albania", prefix: 355, flag: "al" },
+        { name: "Algeria", prefix: 213, flag: "dz" },
+        { name: "American Samoa", prefix: "1-684", flag: "as" },
+        { name: "Andorra", prefix: 376, flag: "ad" },
+        { name: "Angola", prefix: 244, flag: "ao" },
+        { name: "Anguilla", prefix: "1-264", flag: "ai" },
+        { name: "Antarctica", prefix: 672, flag: "aq" },
+        { name: "Antigua and Barbuda", prefix: "1-268", flag: "ag" },
+        { name: "Argentina", prefix: 54, flag: "ar" },
+        { name: "Armenia", prefix: 374, flag: "am" },
+        { name: "Aruba", prefix: 297, flag: "aw" },
+        { name: "Australia", prefix: 61, flag: "au" },
+        { name: "Austria", prefix: 43, flag: "at" },
+        { name: "Azerbaijan", prefix: 994, flag: "az" },
+        { name: "Bahamas", prefix: "1-242", flag: "bs" },
+        { name: "Bahrain", prefix: 973, flag: "bh" },
+        { name: "Bangladesh", prefix: 880, flag: "bd" },
+        { name: "Barbados", prefix: "1-246", flag: "bb" },
+        { name: "Belarus", prefix: 375, flag: "by" },
+        { name: "Belgium", prefix: 32, flag: "be" },
+        { name: "Belize", prefix: 501, flag: "bz" },
+        { name: "Benin", prefix: 229, flag: "bj" },
+        { name: "Bermuda", prefix: "1-441", flag: "bm" },
+        { name: "Bhutan", prefix: 975, flag: "bt" },
+        { name: "Bolivia", prefix: 591, flag: "bo" },
+        { name: "Bosnia and Herzegovina", prefix: 387, flag: "ba" },
+        { name: "Botswana", prefix: 267, flag: "bw" },
+        { name: "Brazil", prefix: 55, flag: "br" },
+        { name: "British Indian Ocean Territory", prefix: 246, flag: "io" },
+        { name: "British Virgin Islands", prefix: "1-284", flag: "vg" },
+        { name: "Brunei", prefix: 673, flag: "bn" },
+        { name: "Bulgaria", prefix: 359, flag: "bg" },
+        { name: "Burkina Faso", prefix: 226, flag: "bf" },
+        { name: "Burundi", prefix: 257, flag: "bi" },
+        { name: "Cambodia", prefix: 855, flag: "kh" },
+        { name: "Cameroon", prefix: 237, flag: "cm" },
+        { name: "Canada", prefix: 1, flag: "ca" },
+        { name: "Cape Verde", prefix: 238, flag: "cv" },
+        { name: "Cayman Islands", prefix: "1-345", flag: "ky" },
+        { name: "Central African Republic", prefix: 236, flag: "cf" },
+        { name: "Chad", prefix: 235, flag: "td" },
+        { name: "Chile", prefix: 56, flag: "cl" },
+        { name: "China", prefix: 86, flag: "cn" },
+        { name: "Christmas Island", prefix: 61, flag: "cx" },
+        { name: "Cocos Islands", prefix: 61, flag: "cc" },
+        { name: "Colombia", prefix: 57, flag: "co" },
+        { name: "Comoros", prefix: 269, flag: "km" },
+        { name: "Cook Islands", prefix: 682, flag: "ck" },
+        { name: "Costa Rica", prefix: 506, flag: "cr" },
+        { name: "Croatia", prefix: 385, flag: "hr" },
+        { name: "Cuba", prefix: 53, flag: "cu" },
+        { name: "Curacao", prefix: 599, flag: "cw" },
+        { name: "Cyprus", prefix: 357, flag: "cy" },
+        { name: "Czech Republic", prefix: 420, flag: "cz" },
+        { name: "Democratic Republic of the Congo", prefix: 243, flag: "cd" },
+        { name: "Denmark", prefix: 45, flag: "dk" },
+        { name: "Djibouti", prefix: 253, flag: "dj" },
+        { name: "Dominica", prefix: "1-767", flag: "dm" },
+        { name: "Dominican Republic", prefix: "1-809", flag: "do" },
+        { name: "East Timor", prefix: 670, flag: "tl" },
+        { name: "Ecuador", prefix: 593, flag: "ec" },
+        { name: "Egypt", prefix: 20, flag: "eg" },
+        { name: "El Salvador", prefix: 503, flag: "sv" },
+        { name: "Equatorial Guinea", prefix: 240, flag: "gq" },
+        { name: "Eritrea", prefix: 291, flag: "er" },
+        { name: "Estonia", prefix: 372, flag: "ee" },
+        { name: "Ethiopia", prefix: 251, flag: "et" },
+        { name: "Falkland Islands", prefix: 500, flag: "fk" },
+        { name: "Faroe Islands", prefix: 298, flag: "fo" },
+        { name: "Fiji", prefix: 679, flag: "fj" },
+        { name: "Finland", prefix: 358, flag: "fi" },
+        { name: "France", prefix: 33, flag: "fr" },
+        { name: "Gabon", prefix: 241, flag: "ga" },
+        { name: "Gambia", prefix: 220, flag: "gm" },
+        { name: "Georgia", prefix: 995, flag: "ge" },
+        { name: "Germany", prefix: 49, flag: "de" },
+        { name: "Ghana", prefix: 233, flag: "gh" },
+        { name: "Gibraltar", prefix: 350, flag: "gi" },
+        { name: "Greece", prefix: 30, flag: "gr" },
+        { name: "Greenland", prefix: 299, flag: "gl" },
+        { name: "Grenada", prefix: "1-473", flag: "gd" },
+        { name: "Guam", prefix: "1-671", flag: "gu" },
+        { name: "Guatemala", prefix: 502, flag: "gt" },
+        { name: "Guernsey", prefix: "44-1481", flag: "gg" },
+        { name: "Guinea", prefix: 224, flag: "gn" },
+        { name: "Guinea-Bissau", prefix: 245, flag: "gw" },
+        { name: "Guyana", prefix: 592, flag: "gy" },
+        { name: "Haiti", prefix: 509, flag: "ht" },
+        { name: "Honduras", prefix: 504, flag: "hn" },
+        { name: "Hong Kong", prefix: 852, flag: "hk" },
+        { name: "Hungary", prefix: 36, flag: "hu" },
+        { name: "Iceland", prefix: 354, flag: "is" },
+        { name: "India", prefix: 91, flag: "in" },
+        { name: "Indonesia", prefix: 62, flag: "id" },
+        { name: "Iran", prefix: 98, flag: "ir" },
+        { name: "Iraq", prefix: 964, flag: "iq" },
+        { name: "Ireland", prefix: 353, flag: "ie" },
+        { name: "Isle of Man", prefix: "44-1624", flag: "im" },
+        { name: "Israel", prefix: 972, flag: "il" },
+        { name: "Italy", prefix: 39, flag: "it" },
+        { name: "Ivory Coast", prefix: 225, flag: "ci" },
+        { name: "Jamaica", prefix: "1-876", flag: "jm" },
+        { name: "Japan", prefix: 81, flag: "jp" },
+        { name: "Jersey", prefix: "44-1534", flag: "je" },
+        { name: "Jordan", prefix: 962, flag: "jo" },
+        { name: "Kazakhstan", prefix: 7, flag: "kz" },
+        { name: "Kenya", prefix: 254, flag: "ke" },
+        { name: "Kiribati", prefix: 686, flag: "ki" },
+        { name: "Kosovo", prefix: 383, flag: "xk" },
+        { name: "Kuwait", prefix: 965, flag: "kw" },
+        { name: "Kyrgyzstan", prefix: 996, flag: "kg" },
+        { name: "Laos", prefix: 856, flag: "la" },
+        { name: "Latvia", prefix: 371, flag: "lv" },
+        { name: "Lebanon", prefix: 961, flag: "lb" },
+        { name: "Lesotho", prefix: 266, flag: "ls" },
+        { name: "Liberia", prefix: 231, flag: "lr" },
+        { name: "Libya", prefix: 218, flag: "ly" },
+        { name: "Liechtenstein", prefix: 423, flag: "li" },
+        { name: "Lithuania", prefix: 370, flag: "lt" },
+        { name: "Luxembourg", prefix: 352, flag: "lu" },
+        { name: "Macau", prefix: 853, flag: "mo" },
+        { name: "Macedonia", prefix: 389, flag: "mk" },
+        { name: "Madagascar", prefix: 261, flag: "mg" },
+        { name: "Malawi", prefix: 265, flag: "mw" },
+        { name: "Malaysia", prefix: 60, flag: "my" },
+        { name: "Maldives", prefix: 960, flag: "mv" },
+        { name: "Mali", prefix: 223, flag: "ml" },
+        { name: "Malta", prefix: 356, flag: "mt" },
+        { name: "Marshall Islands", prefix: 692, flag: "mh" },
+        { name: "Mauritania", prefix: 222, flag: "mr" },
+        { name: "Mauritius", prefix: 230, flag: "mu" },
+        { name: "Mayotte", prefix: 262, flag: "yt" },
+        { name: "Mexico", prefix: 52, flag: "mx" },
+        { name: "Micronesia", prefix: 691, flag: "fm" },
+        { name: "Moldova", prefix: 373, flag: "md" },
+        { name: "Monaco", prefix: 377, flag: "mc" },
+        { name: "Mongolia", prefix: 976, flag: "mn" },
+        { name: "Montenegro", prefix: 382, flag: "me" },
+        { name: "Montserrat", prefix: "1-664", flag: "ms" },
+        { name: "Morocco", prefix: 212, flag: "ma" },
+        { name: "Mozambique", prefix: 258, flag: "mz" },
+        { name: "Myanmar", prefix: 95, flag: "mm" },
+        { name: "Namibia", prefix: 264, flag: "na" },
+        { name: "Nauru", prefix: 674, flag: "nr" },
+        { name: "Nepal", prefix: 977, flag: "np" },
+        { name: "Netherlands", prefix: 31, flag: "nl" },
+        { name: "New Caledonia", prefix: 687, flag: "nc" },
+        { name: "New Zealand", prefix: 64, flag: "nz" },
+        { name: "Nicaragua", prefix: 505, flag: "ni" },
+        { name: "Niger", prefix: 227, flag: "ne" },
+        { name: "Nigeria", prefix: 234, flag: "ng" },
+        { name: "Niue", prefix: 683, flag: "nu" },
+        { name: "North Korea", prefix: 850, flag: "kp" },
+        { name: "Northern Mariana Islands", prefix: "1-670", flag: "mp" },
+        { name: "Norway", prefix: 47, flag: "no" },
+        { name: "Oman", prefix: 968, flag: "om" },
+        { name: "Pakistan", prefix: 92, flag: "pk" },
+        { name: "Palau", prefix: 680, flag: "pw" },
+        { name: "Palestine", prefix: 970, flag: "ps" },
+        { name: "Panama", prefix: 507, flag: "pa" },
+        { name: "Papua New Guinea", prefix: 675, flag: "pg" },
+        { name: "Paraguay", prefix: 595, flag: "py" },
+        { name: "Peru", prefix: 51, flag: "pe" },
+        { name: "Philippines", prefix: 63, flag: "ph" },
+        { name: "Poland", prefix: 48, flag: "pl" },
+        { name: "Portugal", prefix: 351, flag: "pt" },
+        { name: "Puerto Rico", prefix: "1-787", flag: "pr" },
+        { name: "Qatar", prefix: 974, flag: "qa" },
+        { name: "Republic of the Congo", prefix: 242, flag: "cg" },
+        { name: "Romania", prefix: 40, flag: "ro" },
+        { name: "Russia", prefix: 7, flag: "ru" },
+        { name: "Rwanda", prefix: 250, flag: "rw" },
+        { name: "Saint Barthelemy", prefix: 590, flag: "bl" },
+        { name: "Saint Helena", prefix: 290, flag: "sh" },
+        { name: "Saint Kitts and Nevis", prefix: "1-869", flag: "kn" },
+        { name: "Saint Lucia", prefix: "1-758", flag: "lc" },
+        { name: "Saint Martin", prefix: 590, flag: "mf" },
+        { name: "Saint Pierre and Miquelon", prefix: 508, flag: "pm" },
+        { name: "Saint Vincent and the Grenadines", prefix: "1-784", flag: "vc" },
+        { name: "Samoa", prefix: 685, flag: "ws" },
+        { name: "San Marino", prefix: 378, flag: "sm" },
+        { name: "Sao Tome and Principe", prefix: 239, flag: "st" },
+        { name: "Saudi Arabia", prefix: 966, flag: "sa" },
+        { name: "Senegal", prefix: 221, flag: "sn" },
+        { name: "Serbia", prefix: 381, flag: "rs" },
+        { name: "Seychelles", prefix: 248, flag: "sc" },
+        { name: "Sierra Leone", prefix: 232, flag: "sl" },
+        { name: "Singapore", prefix: 65, flag: "sg" },
+        { name: "Sint Maarten", prefix: "1-721", flag: "sx" },
+        { name: "Slovakia", prefix: 421, flag: "sk" },
+        { name: "Slovenia", prefix: 386, flag: "si" },
+        { name: "Solomon Islands", prefix: 677, flag: "sb" },
+        { name: "Somalia", prefix: 252, flag: "so" },
+        { name: "South Africa", prefix: 27, flag: "za" },
+        { name: "South Korea", prefix: 82, flag: "kr" },
+        { name: "South Sudan", prefix: 211, flag: "ss" },
+        { name: "Spain", prefix: 34, flag: "es" },
+        { name: "Sri Lanka", prefix: 94, flag: "lk" },
+        { name: "Sudan", prefix: 249, flag: "sd" },
+        { name: "Suriname", prefix: 597, flag: "sr" },
+        { name: "Swaziland", prefix: 268, flag: "sz" },
+        { name: "Sweden", prefix: 46, flag: "se" },
+        { name: "Switzerland", prefix: 41, flag: "ch" },
+        { name: "Syria", prefix: 963, flag: "sy" },
+        { name: "Taiwan", prefix: 886, flag: "tw" },
+        { name: "Tajikistan", prefix: 992, flag: "tj" },
+        { name: "Tanzania", prefix: 255, flag: "tz" },
+        { name: "Thailand", prefix: 66, flag: "th" },
+        { name: "Togo", prefix: 228, flag: "tg" },
+        { name: "Tonga", prefix: 676, flag: "to" },
+        { name: "Trinidad and Tobago", prefix: "1-868", flag: "tt" },
+        { name: "Tunisia", prefix: 216, flag: "tn" },
+        { name: "Turkey", prefix: 90, flag: "tr" },
+        { name: "Turkmenistan", prefix: 993, flag: "tm" },
+        { name: "Turks and Caicos Islands", prefix: "1-649", flag: "tc" },
+        { name: "Tuvalu", prefix: 688, flag: "tv" },
+        { name: "U.S. Virgin Islands", prefix: "1-340", flag: "vi" },
+        { name: "Uganda", prefix: 256, flag: "ug" },
+        { name: "Ukraine", prefix: 380, flag: "ua" },
+        { name: "United Arab Emirates", prefix: 971, flag: "ae" },
+        { name: "United Kingdom", prefix: 44, flag: "gb" },
+        { name: "United States", prefix: 1, flag: "us" },
+        { name: "Uruguay", prefix: 598, flag: "uy" },
+        { name: "Uzbekistan", prefix: 998, flag: "uz" },
+        { name: "Vanuatu", prefix: 678, flag: "vu" },
+        { name: "Vatican", prefix: 379, flag: "va" },
+        { name: "Venezuela", prefix: 58, flag: "ve" },
+        { name: "Vietnam", prefix: 84, flag: "vn" },
+        { name: "Wallis and Futuna", prefix: 681, flag: "wf" },
+        { name: "Western Sahara", prefix: 212, flag: "eh" },
+        { name: "Yemen", prefix: 967, flag: "ye" },
+        { name: "Zambia", prefix: 260, flag: "zm" },
+        { name: "Zimbabwe", prefix: 263, flag: "zw" }
+      ];
+
+      const countrySelectorBtn = document.getElementById('countrySelectorBtn');
+      const countryDropdown = document.getElementById('countryDropdown');
+      const countrySearch = document.getElementById('countrySearch');
+      const countryList = document.getElementById('countryList');
+      const noResults = document.getElementById('noResults');
+      const selectedFlag = document.getElementById('selectedFlag');
+      const phonePrefix = document.getElementById('phonePrefix');
+      const phonePrefixHidden = document.getElementById('phonePrefixHidden');
+      const phoneInput = document.getElementById('phone');
+
+      // Only allow numeric input in phone field
+      if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+          e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        });
+        
+        phoneInput.addEventListener('keypress', (e) => {
+          if (!/[0-9]/.test(e.key)) {
+            e.preventDefault();
+          }
+        });
+        
+        phoneInput.addEventListener('paste', (e) => {
+          e.preventDefault();
+          const paste = (e.clipboardData || window.clipboardData).getData('text');
+          const numbersOnly = paste.replace(/[^0-9]/g, '');
+          e.target.value = numbersOnly;
+        });
+      }
+
+      let selectedCountry = countries.find(c => c.flag === 'sg') || countries[0];
+
+      function renderCountries(filteredCountries = countries) {
+        countryList.innerHTML = '';
+        noResults.style.display = filteredCountries.length === 0 ? 'block' : 'none';
+
+        filteredCountries.forEach(country => {
+          const li = document.createElement('li');
+          li.className = 'country-list-item';
+          if (country.flag === selectedCountry.flag) {
+            li.classList.add('selected');
+          }
+          const prefixValue = typeof country.prefix === 'string' ? country.prefix : String(country.prefix);
+          li.innerHTML = `
+            <img src="https://flagpedia.net/data/flags/icon/36x27/${country.flag}.png" alt="${country.name}" class="country-list-item-flag">
+            <span class="country-list-item-name">${country.name}</span>
+            <span class="country-list-item-prefix">(+${prefixValue})</span>
+          `;
+          li.addEventListener('click', () => selectCountry(country));
+          countryList.appendChild(li);
+        });
+      }
+
+      function selectCountry(country) {
+        selectedCountry = country;
+        selectedFlag.src = `https://flagpedia.net/data/flags/icon/36x27/${country.flag}.png`;
+        selectedFlag.alt = country.name;
+        const prefixValue = typeof country.prefix === 'string' ? country.prefix : String(country.prefix);
+        phonePrefix.textContent = `+${prefixValue}`;
+        phonePrefixHidden.value = `+${prefixValue}`;
+        closeDropdown();
+        renderCountries();
+        phoneInput.focus();
+      }
+
+      function openDropdown() {
+        countrySelectorBtn.closest('.country-selector').classList.add('active');
+        countrySearch.focus();
+      }
+
+      function closeDropdown() {
+        countrySelectorBtn.closest('.country-selector').classList.remove('active');
+        countrySearch.value = '';
+        renderCountries();
+      }
+
+      if (countrySelectorBtn) {
+        countrySelectorBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = countrySelectorBtn.closest('.country-selector').classList.contains('active');
+          if (isOpen) {
+            closeDropdown();
+          } else {
+            openDropdown();
+          }
+        });
+
+        if (countrySearch) {
+          countrySearch.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = countries.filter(country => {
+              const prefixStr = typeof country.prefix === 'string' ? country.prefix : String(country.prefix);
+              return country.name.toLowerCase().includes(query) || prefixStr.includes(query);
+            });
+            renderCountries(filtered);
+          });
+        }
+
+        document.addEventListener('click', (e) => {
+          if (countrySelectorBtn && countryDropdown && !countrySelectorBtn.contains(e.target) && !countryDropdown.contains(e.target)) {
+            closeDropdown();
+          }
+        });
+
+        // Initialize
+        renderCountries();
       }
     </script>
     
