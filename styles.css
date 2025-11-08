@@ -555,9 +555,14 @@ body {
     max-width: 900px; /* Match Who We Are container width */
 }
 
+/* Content Group - Groups intro, features, and summary */
+.how-we-work-content-group {
+    margin: 2rem 0 0 0;
+}
+
 .how-we-work-intro {
     max-width: 950px;
-    margin: 0 auto 2.5rem auto;
+    margin: 0 auto 1.25rem auto;
     padding: 0;
     text-align: center;
     background: transparent;
@@ -610,7 +615,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 4.7rem;
     max-width: 900px;
-    margin: 0 auto 2.5rem auto;
+    margin: 0 auto 1.25rem auto;
     text-align: center;
 }
 
@@ -679,8 +684,8 @@ body {
     max-width: 300px; /* Wider width to fit more characters per line, reducing line breaks */
 }
 
-.summary-box {
-    margin: 0 auto 3rem auto;
+.how-we-work-content-group .summary-box {
+    margin: 0 auto 0 auto;
     padding: 0;
     border-radius: 0;
     background: transparent;
@@ -698,7 +703,21 @@ body {
 /* CTA in How We Work uses same neuromorphic style as Who We Are */
 .how-we-work-cta {
     text-align: center;
-    margin-top: 0;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(30, 30, 32, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.how-we-work-cta-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.875rem;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .how-we-work-cta .hero-cta-link {
@@ -947,6 +966,11 @@ body {
     background-size: 300%;
 }
 
+/* Content Block - Groups subtitle, grid, and closing text using spacing only */
+.who-we-help-content-block {
+    margin: 2rem 0 0 0;
+}
+
 .who-we-help-subtitle {
     font-family: 'Inter', sans-serif;
     font-size: 1.125rem;
@@ -954,7 +978,7 @@ body {
     color: #1E1E20;
     text-align: center;
     max-width: 800px;
-    margin: 2rem auto 3rem auto;
+    margin: 0 auto 3rem auto;
     opacity: 0.85;
 }
 
@@ -962,7 +986,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
-    margin-top: 2rem;
+    margin: 0;
 }
 
 .who-we-help-item {
@@ -1003,6 +1027,42 @@ body {
     opacity: 0.85;
 }
 
+.who-we-help-closing {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #1E1E20;
+    text-align: center;
+    max-width: 800px;
+    margin: 3rem auto 0 auto;
+    opacity: 0.9;
+}
+
+/* CTA Block - Separate visual group */
+.who-we-help-cta-block {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(30, 30, 32, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.who-we-help-cta-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.875rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.who-we-help-cta-block .hero-cta-link {
+    font-size: 1.125rem;
+    padding: 0.875rem 2rem;
+}
+
 @media (max-width: 900px) {
     .who-we-help-grid {
         grid-template-columns: 1fr;
@@ -1011,7 +1071,17 @@ body {
     
     .who-we-help-subtitle {
         font-size: 1rem;
-        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .who-we-help-closing {
+        margin-top: 2rem;
+        font-size: 1rem;
+    }
+    
+    .who-we-help-cta-block {
+        margin-top: 3rem;
+        padding-top: 2rem;
     }
 }
 
@@ -1172,6 +1242,15 @@ body {
 .what-we-do-cta {
     text-align: center;
     margin-top: 2rem;
+}
+
+.what-we-do-cta-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.875rem;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 /* What We Do CTA uses same neuromorphic green style as hero-cta-link */
@@ -2489,12 +2568,11 @@ body {
 
 .who-we-are-cta .cta-question {
     font-family: 'Inter', sans-serif;
-    margin-bottom: 1.25rem;
-    color: #1E1E20; /* Soft near-black */
-    font-size: 1.125rem; /* 18px */
-    font-weight: 400; /* Lighter weight for question tone */
-    opacity: 0.9;
-    font-variant: small-caps; 
+    margin-bottom: 0.875rem;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 /* CTA link in who-we-are uses same neuromorphic style as hero */
@@ -2832,9 +2910,9 @@ body {
 .roadmap-cta .lead-in {
     color: #333;
     font-size: 1rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.875rem;
     font-family: 'Inter', sans-serif;
-    font-variant: small-caps;
+    text-transform: uppercase;
 }
 
 .roadmap-cta .cta-button {
