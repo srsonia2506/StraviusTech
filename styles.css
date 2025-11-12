@@ -1582,11 +1582,34 @@ body {
     height: 100%;
     display: flex;
     align-items: stretch;
+    position: relative;
+    min-height: 600px;
+}
+
+.calendly-widget-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    border-radius: 8px;
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.calendly-widget-container.loaded::before {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .calendly-widget-container .calendly-inline-widget {
     height: 100% !important;
     min-height: calc(100vh - 300px);
+    position: relative;
+    z-index: 1;
 }
 
 /* Secondary CTA */

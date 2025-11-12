@@ -10,10 +10,13 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="payment=(self https://calendly.com)">
     <title>Stravius Tech | Tech Consultancy</title>
     <meta name="description" content="Stravius Tech delivers cutting-edge AI solutions and strategic technology consulting for forward-thinking businesses.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://assets.calendly.com">
+    <link rel="preconnect" href="https://calendly.com">
     <link href="https://fonts.googleapis.com/css2?family=Recoleta:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -421,21 +424,60 @@
                             <li>Map next steps toward measurable ROI</li>
                         </ul>
                     </div>
-                    <div class="calendly-widget-container">
+                    <div class="calendly-widget-container" id="calendly-container">
                         <div class="calendly-inline-widget" data-url="https://calendly.com/srsoniaintech/30min?background_color=0e0e1a&text_color=ffffff&primary_color=00d1b2" style="min-width:320px;width:100%;height:100%;"></div>
-                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                        <script type="text/javascript">
-                            window.addEventListener('message', function(e) {
-                            if (e.data.event && e.data.event === 'calendly.event_scheduled') {
-                                window.dataLayer = window.dataLayer || [];
-                                window.dataLayer.push({
-                                event: 'calendlyBookingCompleted'
-                                });
-                                console.log('Calendly booking completed event pushed to dataLayer');
-                            }
-                            });
-                        </script>
                     </div>
+                    <script type="text/javascript">
+                        // Lazy load Calendly widget when container is visible
+                        (function() {
+                            var calendlyContainer = document.getElementById('calendly-container');
+                            if (!calendlyContainer) return;
+                            
+                            var calendlyLoaded = false;
+                            
+                            function loadCalendly() {
+                                if (calendlyLoaded) return;
+                                calendlyLoaded = true;
+                                
+                                var script = document.createElement('script');
+                                script.type = 'text/javascript';
+                                script.src = 'https://assets.calendly.com/assets/external/widget.js';
+                                script.async = true;
+                                script.onload = function() {
+                                    calendlyContainer.classList.add('loaded');
+                                };
+                                calendlyContainer.appendChild(script);
+                                
+                                // Set up event tracking
+                                window.addEventListener('message', function(e) {
+                                    if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+                                        window.dataLayer = window.dataLayer || [];
+                                        window.dataLayer.push({
+                                            event: 'calendlyBookingCompleted'
+                                        });
+                                    }
+                                });
+                            }
+                            
+                            // Use Intersection Observer for lazy loading
+                            if ('IntersectionObserver' in window) {
+                                var observer = new IntersectionObserver(function(entries) {
+                                    entries.forEach(function(entry) {
+                                        if (entry.isIntersecting) {
+                                            loadCalendly();
+                                            observer.disconnect();
+                                        }
+                                    });
+                                }, {
+                                    rootMargin: '200px' // Load 200px before visible
+                                });
+                                observer.observe(calendlyContainer);
+                            } else {
+                                // Fallback for older browsers
+                                loadCalendly();
+                            }
+                        })();
+                    </script>
                 </div>
                 
                 <div class="contact-secondary-cta">
