@@ -18,12 +18,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Automation for Accounting Firms | Stravius Tech</title>
-<meta name="description" content="Automations that chase client documents, file what arrives and stop when you&#x27;re done. Built in your own accounts and tested before they go live.">
+<meta name="description" content="AI automation that collects client documents for accounting firms and stops reminders once everything arrives. Built in your own accounts and tested before launch.">
 <link rel="canonical" href="https://straviustech.com/accounting">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Stravius Tech">
 <meta property="og:title" content="AI Automation for Accounting Firms | Stravius Tech">
-<meta property="og:description" content="Automations that chase client documents, file what arrives and stop when you&#x27;re done. Built in your own accounts and tested before they go live.">
+<meta property="og:description" content="AI automation that collects client documents for accounting firms and stops reminders once everything arrives. Built in your own accounts and tested before launch.">
 <meta property="og:url" content="https://straviustech.com/accounting">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#F5F6F2">
@@ -70,7 +70,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   {
    "@type": "Service",
    "@id": "https://straviustech.com/accounting#service",
-   "name": "Document automation for accounting firms",
+   "name": "AI automation for accounting firms",
    "provider": {
     "@id": "https://straviustech.com/#org"
    },
@@ -86,7 +86,23 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "Does it work with QuickBooks, Xero or our practice software?",
+     "name": "Can we trust AI with client data and documents?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "An NDA and a data processing agreement come first. The automation runs inside your own accounts, I build with synthetic data and I keep client files out of public AI tools. It has to pass the tests we agree on before launch, and anything it isn't sure about goes to a person."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is this different from a client portal, ChatGPT or offshore staff?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Portals collect files, but someone still has to chase the clients who don't upload. ChatGPT needs someone to paste files in, which is how client data ends up in public tools. Offshore staff give you more people to manage. This runs inside your own accounts, works alongside your portal and alerts you if something fails."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does it work with QuickBooks, Xero and practice software like Karbon or TaxDome?",
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "In most cases, yes. In the audit I confirm which of your tools it can connect to and how. If I can't connect something safely, you'll know before you pay anything."
@@ -94,42 +110,18 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     },
     {
      "@type": "Question",
-     "name": "We already use a client portal. Is this still useful?",
+     "name": "Do we need anyone technical, and how much of our time will it take?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Often. Portals collect files, but someone still has to chase the clients who don't upload. The automation can work alongside your portal's reminders or fill the gaps around them, and the audit will show whether it's worth it for your firm."
+      "text": "You don't need anyone technical. I build it, connect it to your accounts and set up the alerts. I need someone who knows your process in week 1 to map the workflow and agree the tests, and again in week 2 to review it. Your team then gets a walkthrough at handover."
      }
     },
     {
      "@type": "Question",
-     "name": "Do we need anyone technical on our side?",
+     "name": "Can it be live before busy season or tax season?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No. I build it, connect it to your accounts and set up the alerts. Your team needs to know your process, not the technology, and gets a walkthrough at handover."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Will clients find automated reminders annoying?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Each reminder lists only what that client still owes, and the reminders stop as soon as they've sent it. We agree the wording and schedule with you before anything goes live."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Is our client data safe?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "An NDA and a data processing agreement come first. The automation runs inside your own accounts, I build with synthetic data, and I keep client files out of public AI tools."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Can it be ready before busy season?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The audit report arrives within three business days, and a sprint takes three weeks from kickoff. Book at least five weeks before you need it live."
+      "text": "Plan on about four weeks. The audit report arrives within three business days and a sprint takes three weeks from kickoff, so book at least four weeks before you need it live."
      }
     },
     {
@@ -138,14 +130,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "Alerts tell us before your clients notice. Anything that stops passing the agreed tests is fixed at no charge for 45 days after launch. After that, Ongoing Support covers it."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Will it replace our staff?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "No. It takes the chasing and retyping off your seniors' desks, so they spend busy season on client work. Anything the automation isn't sure about still goes to a person."
      }
     }
    ]
@@ -175,8 +159,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
   <header class="hero" id="main">
     <div>
-      <h1>For accounting firms: client documents that chase themselves this busy season.</h1>
-      <p class="lede">Give your seniors their afternoons back this busy season. I build an automation that reminds each client about the documents still missing, files what arrives and stops once they're done. It runs inside your own accounts, and nothing goes live until it passes the tests we agree on.</p>
+      <h1>For accounting firms: client documents that chase themselves, so your team doesn't.</h1>
+      <p class="lede">Give your accountants their afternoons back this busy season. I build an AI automation that collects client documents for you. It reminds each client what's still missing, files what arrives and stops once they're done. It runs inside your own accounts and nothing goes live until it passes the tests we agree on.</p>
       <div class="actions">
         <a class="btn" href="#book">Book an Automation Audit</a>
         <a class="btn quiet" href="#kit" hidden>Get the Document Chaser</a>
@@ -190,7 +174,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         <li style="--i:0">Sends reminder listing only missing items <span class="status pass">PASS</span></li>
         <li style="--i:1">Stops chasing once all documents arrive <span class="status pass">PASS</span></li>
         <li style="--i:2">Client replies "already sent" <span class="status pass">PASS</span></li>
-        <li style="--i:3">Blurry scan is flagged for review <span class="status fixed">FIXED</span></li>
+        <li style="--i:3">Blurry scan is flagged for review <span class="status pass">PASS</span></li>
         <li style="--i:4">Two clients with the same name <span class="status pass">PASS</span></li>
         <li style="--i:5">Reply from a different email address <span class="status pass">PASS</span></li>
         <li style="--i:6">Wrong document type uploaded <span class="status pass">PASS</span></li>
@@ -206,7 +190,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     <h2>Your team shouldn't spend busy season chasing clients and retyping forms.</h2>
     <div class="familiar impact">
       <p><b>Missing documents</b>You're still waiting on bank statements from a dozen clients.<span class="cost">Returns stall until the last file arrives.</span></p>
-      <p><b>Reminders</b>Your seniors spend afternoons writing reminder emails.<span class="cost">Their hours go to admin instead of client work.</span></p>
+      <p><b>Capacity</b>You can't hire enough accountants, and the ones you have spend afternoons writing reminder emails.<span class="cost">Their hours go to admin instead of client work.</span></p>
       <p><b>Onboarding</b>New clients send their KYC documents in five different formats.<span class="cost">Someone retypes the same details into several systems.</span></p>
       <p><b>Client data</b>Someone pasted a client's return into ChatGPT, and you can't say where it went.<span class="cost">That's the conversation no firm wants to have with a client.</span></p>
     </div>
@@ -215,12 +199,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
 <section class="block" id="workflows">
   <div class="wrap">
-    <h2>Four workflows I automate for accounting firms.</h2>
+    <h2>Four accounting workflows I automate for your team.</h2>
     <div class="flows">
-      <div><h3>Document chasing</h3><p class="ba"><b>Today</b>Staff send reminders by hand and track replies in a spreadsheet.</p><p class="ba"><b>With Automation</b>The automation sends each client a reminder listing only what's missing, saves each file to the right folder and ticks it off.</p></div>
-      <div><h3>Client onboarding and KYC</h3><p class="ba"><b>Today</b>Your team retypes details from forms and ID documents into several systems.</p><p class="ba"><b>With Automation</b>The automation captures the details once, checks them and files them where they belong.</p></div>
-      <div><h3>Reconciliation prep</h3><p class="ba"><b>Today</b>Your team copies figures from statements into spreadsheets by hand.</p><p class="ba"><b>With Automation</b>The automation pulls out statement lines and flags anything that doesn't match for review.</p></div>
-      <div><h3>Deadline reminders</h3><p class="ba"><b>Today</b>Deadlines live in a shared calendar and someone's memory.</p><p class="ba"><b>With Automation</b>Clients and staff get reminders at set points before each deadline.</p></div>
+      <div><h3>Document chasing</h3><p class="ba"><b>Today</b>Staff send reminders by hand and track replies in a spreadsheet.</p><p class="ba"><b>With Automation</b>The automation sends each client a reminder listing only what's missing, saves each file to the right folder and ticks it off. You can see who's still outstanding without opening a spreadsheet.</p></div>
+      <div><h3>Client onboarding and KYC</h3><p class="ba"><b>Today</b>Your team retypes details from forms and ID documents into several systems.</p><p class="ba"><b>With Automation</b>The automation captures the details once, checks them and files them where they belong. New clients get set up once and your team stops retyping.</p></div>
+      <div><h3>Reconciliation prep</h3><p class="ba"><b>Today</b>Your team copies figures from statements into spreadsheets by hand.</p><p class="ba"><b>With Automation</b>The automation pulls out statement lines and flags anything that doesn't match for review. Your reviewers start from the exceptions instead of a blank spreadsheet.</p></div>
+      <div><h3>Deadline reminders</h3><p class="ba"><b>Today</b>Filing deadlines live in a shared calendar and someone's memory.</p><p class="ba"><b>With Automation</b>Clients and staff get reminders at set points before each deadline. Your deadlines stop depending on one person's memory.</p></div>
     </div>
   </div>
 </section>
@@ -235,6 +219,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     <ul class="cases">
       <li>Wrong Document Sent</li><li>Blurry or Rotated Scan</li><li>Reply from a Different Email Address</li><li>Two Clients with the Same Name</li><li>Partial Upload</li><li>"I already sent it"</li>
     </ul>
+    <p class="lede" style="margin-top:32px">If it isn't sure about a document, it sends it to your team to check. We agree the reminder wording and schedule with you before anything goes live.</p>
   </div>
 </section>
 
@@ -251,11 +236,11 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
 <section class="block" id="how">
   <div class="wrap">
-    <h2>How we'd work together.</h2>
+    <h2>From first call to live automation in about four weeks.</h2>
     <ol class="steps">
-      <li><h3>Automation Audit</h3><p class="when">45-minute call, report within 3 business days</p><p class="muted">We walk through how your firm handles documents today. You get a written report with your top three workflows to automate, the hours each could save, and a fixed quote.</p></li>
-      <li><h3>Three-week sprint</h3><p class="when">Weeks 1 to 3</p><p class="muted">One workflow, built inside your accounts, tested against the cases we agree on, and switched on with alerts in place. Anything that stops passing the agreed tests is fixed at no charge for 45 days after launch.</p></li>
-      <li><h3>Ongoing Support</h3><p class="when">Monthly, after launch</p><p class="muted">Monitoring, fixes when a client form or email format changes, and a short monthly report on what ran and what it saved.</p></li>
+      <li><h3>Automation Audit</h3><p class="when">45-minute call, Report within 3 business days</p><p class="muted">We walk through how your firm handles documents today. You get a written report with your top three workflows to automate, the hours each could save, and a fixed quote.</p></li>
+      <li><h3>Three Week Sprint</h3><p class="when">Weeks 1 to 3</p><p class="muted">One workflow, built inside your accounts, tested against the cases we agree on, and switched on with alerts in place. Anything that stops passing the agreed tests is fixed at no charge for 45 days after launch.</p></li>
+      <li><h3>Ongoing Support</h3><p class="when">Monthly after Launch</p><p class="muted">Monitoring, fixes when a client form or email format changes, and a short monthly report on what ran and what it saved.</p></li>
     </ol>
   </div>
 </section>
@@ -312,14 +297,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   <div class="wrap faq-block">
     <h2>Questions accounting firms ask.</h2>
     <div class="faq">
-<details><summary>Does it work with QuickBooks, Xero or our practice software?</summary><p>In most cases, yes. In the audit I confirm which of your tools it can connect to and how. If I can't connect something safely, you'll know before you pay anything.</p></details>
-<details><summary>We already use a client portal. Is this still useful?</summary><p>Often. Portals collect files, but someone still has to chase the clients who don't upload. The automation can work alongside your portal's reminders or fill the gaps around them, and the audit will show whether it's worth it for your firm.</p></details>
-<details><summary>Do we need anyone technical on our side?</summary><p>No. I build it, connect it to your accounts and set up the alerts. Your team needs to know your process, not the technology, and gets a walkthrough at handover.</p></details>
-<details><summary>Will clients find automated reminders annoying?</summary><p>Each reminder lists only what that client still owes, and the reminders stop as soon as they've sent it. We agree the wording and schedule with you before anything goes live.</p></details>
-<details><summary>Is our client data safe?</summary><p>An NDA and a data processing agreement come first. The automation runs inside your own accounts, I build with synthetic data, and I keep client files out of public AI tools.</p></details>
-<details><summary>Can it be ready before busy season?</summary><p>The audit report arrives within three business days, and a sprint takes three weeks from kickoff. Book at least five weeks before you need it live.</p></details>
+<details><summary>Can we trust AI with client data and documents?</summary><p>An NDA and a data processing agreement come first. The automation runs inside your own accounts, I build with synthetic data and I keep client files out of public AI tools. It has to pass the tests we agree on before launch, and anything it isn't sure about goes to a person.</p></details>
+<details><summary>How is this different from a client portal, ChatGPT or offshore staff?</summary><p>Portals collect files, but someone still has to chase the clients who don't upload. ChatGPT needs someone to paste files in, which is how client data ends up in public tools. Offshore staff give you more people to manage. This runs inside your own accounts, works alongside your portal and alerts you if something fails.</p></details>
+<details><summary>Does it work with QuickBooks, Xero and practice software like Karbon or TaxDome?</summary><p>In most cases, yes. In the audit I confirm which of your tools it can connect to and how. If I can't connect something safely, you'll know before you pay anything.</p></details>
+<details><summary>Do we need anyone technical, and how much of our time will it take?</summary><p>You don't need anyone technical. I build it, connect it to your accounts and set up the alerts. I need someone who knows your process in week 1 to map the workflow and agree the tests, and again in week 2 to review it. Your team then gets a walkthrough at handover.</p></details>
+<details><summary>Can it be live before busy season or tax season?</summary><p>Plan on about four weeks. The audit report arrives within three business days and a sprint takes three weeks from kickoff, so book at least four weeks before you need it live.</p></details>
 <details><summary>What happens if something breaks after launch?</summary><p>Alerts tell us before your clients notice. Anything that stops passing the agreed tests is fixed at no charge for 45 days after launch. After that, Ongoing Support covers it.</p></details>
-<details><summary>Will it replace our staff?</summary><p>No. It takes the chasing and retyping off your seniors' desks, so they spend busy season on client work. Anything the automation isn't sure about still goes to a person.</p></details>
     </div>
   </div>
 </section>
@@ -331,7 +314,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       <ul class="agenda">
         <li>Walk through how your firm chases documents today</li>
         <li>Find your top three workflows to automate</li>
-        <li>Agree what the written report will cover</li>
+        <li>Get a written report and a fixed quote</li>
       </ul>
       <p class="muted">No cost, and you keep the written report either way.</p>
       <p style="margin-top:12px"><a href="/contact" class="btn quiet">Prefer to write? Send a message</a></p>
